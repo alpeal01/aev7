@@ -36,5 +36,10 @@ namespace AEV7
                //Empleado emp = new Empleado(txtNif.Text,txtNombre,txtApellidos);
             }
         }
+
+        private void FrmMantenimiento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

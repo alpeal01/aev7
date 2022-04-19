@@ -42,7 +42,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tmrReloj = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).BeginInit();
             this.grbDiaHora.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -62,9 +62,10 @@
             // 
             this.lblDia.AutoSize = true;
             this.lblDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblDia.Location = new System.Drawing.Point(29, 28);
+            this.lblDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblDia.Location = new System.Drawing.Point(48, 28);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(25, 13);
+            this.lblDia.Size = new System.Drawing.Size(41, 25);
             this.lblDia.TabIndex = 1;
             this.lblDia.Text = "Día";
             // 
@@ -72,9 +73,10 @@
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblHora.Location = new System.Drawing.Point(29, 59);
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblHora.Location = new System.Drawing.Point(59, 63);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(30, 13);
+            this.lblHora.Size = new System.Drawing.Size(54, 25);
             this.lblHora.TabIndex = 2;
             this.lblHora.Text = "Hora";
             // 
@@ -185,6 +187,10 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // tmrReloj
+            // 
+            this.tmrReloj.Tick += new System.EventHandler(this.tmrReloj_Tick);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,7 +233,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer tmrReloj;
     }
 }
 
