@@ -30,6 +30,8 @@ namespace AEV7
                     lista = Empleado.BuscarEmpleado(txtNif.Text);
                     if (lista.Count > 0 && lista[0].Nif == txtNif.Text && lista[0].Clave == txtCont.Text)
                     {
+                        this.Close();
+                        this.Dispose();
                         FrmMantenimiento mant = new FrmMantenimiento();
                         mant.Show();
                     }
@@ -52,8 +54,6 @@ namespace AEV7
             {
                 ConBD.CerrarConexion();
             }
-            this.Close();
-            this.Dispose();
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

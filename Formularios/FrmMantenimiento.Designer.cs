@@ -33,6 +33,8 @@
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblFichajes = new System.Windows.Forms.Label();
             this.grpGestion = new System.Windows.Forms.GroupBox();
+            this.txtDir = new System.Windows.Forms.TextBox();
+            this.lblDir = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtCont = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.lblNif = new System.Windows.Forms.Label();
             this.lblGestion = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.lblDir = new System.Windows.Forms.Label();
-            this.txtDir = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.grpGestion.SuspendLayout();
@@ -110,6 +110,22 @@
             this.grpGestion.Size = new System.Drawing.Size(281, 392);
             this.grpGestion.TabIndex = 4;
             this.grpGestion.TabStop = false;
+            // 
+            // txtDir
+            // 
+            this.txtDir.Location = new System.Drawing.Point(84, 210);
+            this.txtDir.Name = "txtDir";
+            this.txtDir.Size = new System.Drawing.Size(100, 20);
+            this.txtDir.TabIndex = 13;
+            // 
+            // lblDir
+            // 
+            this.lblDir.AutoSize = true;
+            this.lblDir.Location = new System.Drawing.Point(16, 213);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(55, 13);
+            this.lblDir.TabIndex = 12;
+            this.lblDir.Text = "Dirección:";
             // 
             // btnAgregar
             // 
@@ -227,22 +243,6 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // lblDir
-            // 
-            this.lblDir.AutoSize = true;
-            this.lblDir.Location = new System.Drawing.Point(16, 213);
-            this.lblDir.Name = "lblDir";
-            this.lblDir.Size = new System.Drawing.Size(55, 13);
-            this.lblDir.TabIndex = 12;
-            this.lblDir.Text = "Dirección:";
-            // 
-            // txtDir
-            // 
-            this.txtDir.Location = new System.Drawing.Point(84, 210);
-            this.txtDir.Name = "txtDir";
-            this.txtDir.Size = new System.Drawing.Size(100, 20);
-            this.txtDir.TabIndex = 13;
-            // 
             // FrmMantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,6 +256,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmMantenimiento";
             this.Text = "Funciones de Mantenimiento";
+            this.Load += new System.EventHandler(this.FrmMantenimiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.grpGestion.ResumeLayout(false);
