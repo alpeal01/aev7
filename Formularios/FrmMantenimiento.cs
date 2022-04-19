@@ -33,7 +33,7 @@ namespace AEV7
             }
             else
             {
-               // Empleado emp = new Empleado(txtNif.Text,txtNombre,txtApellidos);
+               //Empleado emp = new Empleado(txtNif.Text,txtNombre,txtApellidos);
             }
         }
     }

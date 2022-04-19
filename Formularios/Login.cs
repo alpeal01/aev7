@@ -55,6 +55,11 @@ namespace AEV7
             this.Close();
             this.Dispose();
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     
