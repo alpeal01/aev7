@@ -103,10 +103,38 @@ namespace AEV7.Clases
                         reader.GetString(3), reader.GetBoolean(4), reader.GetString(6));
                     lista.Add(user);
                 }
+                reader.Close();
             }
             return lista;
 
         }
+
+        public static int FicharEntrada(string nif, string hora)
+        {
+            int retorno;
+            DateTime dia = DateTime.Now;
+            string consulta = String.Format("INSERT INTO fichaje (nif_empleado, dia, h_entrada, F_entrada, f_salida) VALUES " +
+                "('{0}','{1}','{2}', true , false)", nif, dia.ToString("yyyy-MM-dd"), hora);
+
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+
+            retorno = comando.ExecuteNonQuery();
+
+            return retorno;
+        }
+
+        public static int FicharSalida(string nif, string hora)
+        {
+            int retorno;
+            string consulta = String.Format("UPDATE fichaje SET f_salida = true, h_salida = ('{1}') WHERE nif_empleado = ('{0}')", nif, hora);
+
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+
+            retorno = comando.ExecuteNonQuery();
+
+            return retorno;
+        }
+
 
     }
 }

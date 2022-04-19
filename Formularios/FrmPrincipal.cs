@@ -15,43 +15,26 @@ namespace AEV7
     {
         public FrmPrincipal()
         {
-
             InitializeComponent();
-            /*try
-            {
-                if (ConBD.Conexion != null)
-                {
-                    ConBD.AbrirConexion();
-                    MessageBox.Show("Se ha conectado");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-            }*/
         }
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
-            string consulta;
-
             try
             {
                 if (ConBD.Conexion != null)
                 {
                     ConBD.AbrirConexion();
-
-
-                    if (String.IsNullOrEmpty(txtNif.Text))
+                    List<Empleado> lista = new List<Empleado>();
+                    lista = Empleado.BuscarEmpleado(txtNif.Text);
+                    if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
                     {
-                        errorProvider1.SetError(txtNif, "NIF Inválido");
+                        Empleado.FicharEntrada(txtNif.Text, lblHora.Text);
                     }
                     else
                     {
-                        consulta = "INSERT INTO fichaje ";
+                        MessageBox.Show("No se ha podido realizar");
                     }
-
-                    ConBD.CerrarConexion();
 
                 }
                 else
@@ -71,7 +54,36 @@ namespace AEV7
 
         private void btnSalida_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    List<Empleado> lista = new List<Empleado>();
+                    lista = Empleado.BuscarEmpleado(txtNif.Text);
+                    if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
+                    {
+                        Empleado.FicharSalida(txtNif.Text, lblHora.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido realizar");
+                    }
 
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
         }
 
         private void btnPresencia_Click(object sender, EventArgs e)
@@ -98,7 +110,15 @@ namespace AEV7
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            tmrReloj.Enabled = true;
+            tmrReloj.Interval = 1;
+            lblHora.Text = DateTime.Now.ToString("T");
+            lblDia.Text = DateTime.Now.ToString("dd-MM-yyyy");
+        }
 
+        private void tmrReloj_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("T");
         }
     }
 }
