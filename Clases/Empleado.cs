@@ -8,8 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace AEV7.Clases
 {
-    //prueba de github
-    // prueba 2
+
     internal class Empleado
     {
         string nif;
@@ -40,9 +39,6 @@ namespace AEV7.Clases
             this.clave = clave;
 
         }
-
-        public Empleado()
-        { }
         /// <summary>
         /// Calcular la letra del nif y devulve si es cierta o no
         /// </summary>

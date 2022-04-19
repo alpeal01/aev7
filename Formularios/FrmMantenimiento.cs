@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AEV7.Clases;
 
 namespace AEV7
 {
@@ -21,6 +22,19 @@ namespace AEV7
         {
             this.Close();
             this.Dispose();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (!Empleado.CalcLetra(txtNif.Text))
+            {
+                MessageBox.Show("El NIF no es correcto");
+
+            }
+            else
+            {
+               // Empleado emp = new Empleado(txtNif.Text,txtNombre,txtApellidos);
+            }
         }
     }
 }
