@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AEV7.Clases;
+using MySql.Data.MySqlClient;
 
 namespace AEV7
 {
@@ -33,8 +28,40 @@ namespace AEV7
             }
             else
             {
-               //Empleado emp = new Empleado(txtNif.Text,txtNombre,txtApellidos);
+                
+
+                try { 
+                    if (ConBD.Conexion != null)
+                    {
+                        
+                        ConBD.AbrirConexion();
+                        Empleado emp = new Empleado(txtNif.Text, txtNombre.Text, txtApellidos.Text, txtDir.Text, chbAdmin.Checked, txtCont.Text);
+
+                        Empleado.AgregarEmpleado(emp);
+
+                        MessageBox.Show("Empleado agregado correctamente");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                    }
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                }
+                finally
+                {
+                    ConBD.CerrarConexion();
+                }
             }
+        }
+
+        private void FrmMantenimiento_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

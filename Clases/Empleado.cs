@@ -55,7 +55,7 @@ namespace AEV7.Clases
             }
             char let = letra[int.Parse(num) % 23];
 
-            if (let == nif[9])
+            if (let == nif[8])
             {
                 return true;
 
@@ -70,11 +70,15 @@ namespace AEV7.Clases
         /// </summary>
         /// <param name="emp">Objeto Empleado</param>
         /// <returns>Número de registros afectados</returns>
-        public int AgregarEmpleado(Empleado emp)
+        public static int AgregarEmpleado(Empleado emp)
         {
+            
             int retorno;
-            string consulta = String.Format("INSERT INTO empleado (nif, nombre, apellido, direccion, admin, borrado, clave) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", emp.nif, emp.Nombre, emp.Apellido, emp.Direccion, emp.Admin, emp.Borrado, emp.Clave);
+            string consulta = String.Format("INSERT INTO empleado (nif, nombre, apellido, direccion, clave, administrador, borrado) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4}',", emp.nif, emp.Nombre, emp.Apellido, emp.Direccion, emp.Clave);
+            consulta += " " + emp.admin;
+            consulta += ", " + emp.borrado + ");";
+
 
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
 
