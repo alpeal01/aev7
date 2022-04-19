@@ -28,7 +28,7 @@ namespace AEV7
                     ConBD.AbrirConexion();
                     List<Empleado> lista = new List<Empleado>();
                     lista = Empleado.BuscarEmpleado(txtNif.Text);
-                    if (lista[0].Nif == txtNif.Text && lista[0].Clave == txtCont.Text)
+                    if (lista.Count > 0 && lista[0].Nif == txtNif.Text && lista[0].Clave == txtCont.Text)
                     {
                         FrmMantenimiento mant = new FrmMantenimiento();
                         mant.Show();

@@ -46,6 +46,8 @@
             this.lblNif = new System.Windows.Forms.Label();
             this.lblGestion = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblDir = new System.Windows.Forms.Label();
+            this.txtDir = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.grpGestion.SuspendLayout();
@@ -89,6 +91,8 @@
             // 
             // grpGestion
             // 
+            this.grpGestion.Controls.Add(this.txtDir);
+            this.grpGestion.Controls.Add(this.lblDir);
             this.grpGestion.Controls.Add(this.btnAgregar);
             this.grpGestion.Controls.Add(this.btnEliminar);
             this.grpGestion.Controls.Add(this.txtCont);
@@ -130,7 +134,7 @@
             // 
             // txtCont
             // 
-            this.txtCont.Location = new System.Drawing.Point(84, 245);
+            this.txtCont.Location = new System.Drawing.Point(84, 275);
             this.txtCont.Name = "txtCont";
             this.txtCont.Size = new System.Drawing.Size(100, 20);
             this.txtCont.TabIndex = 9;
@@ -159,7 +163,7 @@
             // chbAdmin
             // 
             this.chbAdmin.AutoSize = true;
-            this.chbAdmin.Location = new System.Drawing.Point(84, 210);
+            this.chbAdmin.Location = new System.Drawing.Point(95, 244);
             this.chbAdmin.Name = "chbAdmin";
             this.chbAdmin.Size = new System.Drawing.Size(89, 17);
             this.chbAdmin.TabIndex = 5;
@@ -169,7 +173,7 @@
             // lblCont
             // 
             this.lblCont.AutoSize = true;
-            this.lblCont.Location = new System.Drawing.Point(14, 248);
+            this.lblCont.Location = new System.Drawing.Point(14, 278);
             this.lblCont.Name = "lblCont";
             this.lblCont.Size = new System.Drawing.Size(64, 13);
             this.lblCont.TabIndex = 4;
@@ -223,6 +227,22 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lblDir
+            // 
+            this.lblDir.AutoSize = true;
+            this.lblDir.Location = new System.Drawing.Point(16, 213);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(55, 13);
+            this.lblDir.TabIndex = 12;
+            this.lblDir.Text = "Dirección:";
+            // 
+            // txtDir
+            // 
+            this.txtDir.Location = new System.Drawing.Point(84, 210);
+            this.txtDir.Name = "txtDir";
+            this.txtDir.Size = new System.Drawing.Size(100, 20);
+            this.txtDir.TabIndex = 13;
+            // 
             // FrmMantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,5 +285,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.TextBox txtDir;
+        private System.Windows.Forms.Label lblDir;
     }
 }
