@@ -8,6 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace AEV7.Clases
 {
+    //prueba de github
     internal class Empleado
     {
         string nif;
