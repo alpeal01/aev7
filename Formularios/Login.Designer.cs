@@ -60,6 +60,7 @@
             // 
             this.txtNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNif.Location = new System.Drawing.Point(124, 134);
+            this.txtNif.MaxLength = 9;
             this.txtNif.Name = "txtNif";
             this.txtNif.Size = new System.Drawing.Size(190, 23);
             this.txtNif.TabIndex = 2;
@@ -71,6 +72,7 @@
             this.txtCont.Name = "txtCont";
             this.txtCont.Size = new System.Drawing.Size(190, 23);
             this.txtCont.TabIndex = 3;
+            this.txtCont.UseSystemPasswordChar = true;
             // 
             // lblCont
             // 
