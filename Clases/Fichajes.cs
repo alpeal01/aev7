@@ -27,10 +27,6 @@ namespace AEV7.Clases
 
 
 
-
-        public string Nombre { get { return nombre; } set { nombre = value; } }
-        public string Apellidos { get { return apellidos; } set { apellidos = value; } }
-        private string Hora { get { return hora; } set { hora = value; } }
         public Fichajes(string n, string ap, string h)
         {
             nombre = n;
