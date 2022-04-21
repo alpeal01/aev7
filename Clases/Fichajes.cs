@@ -27,6 +27,10 @@ namespace AEV7.Clases
 
 
 
+
+        public string Nombre { get { return nombre; } set { nombre = value; } }
+        public string Apellidos { get { return apellidos; } set { apellidos = value; } }
+        private string Hora { get { return hora; } set { hora = value; } }
         public Fichajes(string n, string ap, string h)
         {
             nombre = n;
@@ -56,11 +60,16 @@ namespace AEV7.Clases
                 // Recorremos el reader y cargamos la lista de usuarios.
                 while (reader.Read())
                 {
-                    Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2));
-                    mensaje += "\r\n " + fichaje.nombre + fichaje.apellidos + "Hora: " + fichaje.hora;
+                    Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2));                   
                     lista.Add(fichaje);
                 }
                 reader.Close();
+
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    mensaje += "\r\n-------------------------";
+                    mensaje += "\r\nNombre: " + lista[i].Nombre + " " + lista[i].Apellidos + "; Hora de entrada: " + lista[i].Hora;
+                }
             }
             return mensaje;
 

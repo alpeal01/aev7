@@ -171,6 +171,7 @@ namespace AEV7
         private void btnVolver_Click(object sender, EventArgs e)
         {
             ptbFoto.Visible = true;
+            txtMessage.Clear();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
