@@ -163,10 +163,11 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
+            this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.txtMessage.Location = new System.Drawing.Point(172, 165);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
+            this.txtMessage.ReadOnly = true;
             this.txtMessage.Size = new System.Drawing.Size(644, 290);
             this.txtMessage.TabIndex = 9;
             this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

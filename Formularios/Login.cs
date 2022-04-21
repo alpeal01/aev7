@@ -28,7 +28,7 @@ namespace AEV7
                     ConBD.AbrirConexion();
                     List<Empleado> lista = new List<Empleado>();
                     lista = Empleado.BuscarEmpleado(txtNif.Text);
-                    if (lista.Count > 0 && lista[0].Nif == txtNif.Text && lista[0].Clave == txtCont.Text)
+                    if (lista.Count > 0 && lista[0].Nif == txtNif.Text && lista[0].Clave == txtCont.Text && lista[0].Admin == true)
                     {
                         this.Close();
                         this.Dispose();

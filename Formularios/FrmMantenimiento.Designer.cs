@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtvEmpleados = new System.Windows.Forms.DataGridView();
+            this.nif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblFichajes = new System.Windows.Forms.Label();
@@ -48,24 +53,69 @@
             this.lblNif = new System.Windows.Forms.Label();
             this.lblGestion = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnCerrarAPP = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.grpGestion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtvEmpleados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(105, 79);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(682, 199);
-            this.dataGridView1.TabIndex = 0;
+            this.dtvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nif,
+            this.nombre,
+            this.apellido,
+            this.direccion,
+            this.admin});
+            this.dtvEmpleados.Location = new System.Drawing.Point(105, 79);
+            this.dtvEmpleados.Name = "dtvEmpleados";
+            this.dtvEmpleados.ReadOnly = true;
+            this.dtvEmpleados.Size = new System.Drawing.Size(682, 199);
+            this.dtvEmpleados.TabIndex = 0;
+            this.dtvEmpleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEmpleados_CellContentDoubleClick);
+            // 
+            // nif
+            // 
+            this.nif.HeaderText = "NIF";
+            this.nif.Name = "nif";
+            this.nif.ReadOnly = true;
+            this.nif.Width = 130;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 130;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 130;
+            // 
+            // direccion
+            // 
+            this.direccion.HeaderText = "Dirección";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 130;
+            // 
+            // admin
+            // 
+            this.admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.admin.HeaderText = "Administrador";
+            this.admin.Name = "admin";
+            this.admin.ReadOnly = true;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(105, 354);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(682, 199);
             this.dataGridView2.TabIndex = 1;
             // 
@@ -147,6 +197,7 @@
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtCont
             // 
@@ -243,21 +294,33 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // btnCerrarAPP
+            // 
+            this.btnCerrarAPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCerrarAPP.Location = new System.Drawing.Point(1049, 4);
+            this.btnCerrarAPP.Name = "btnCerrarAPP";
+            this.btnCerrarAPP.Size = new System.Drawing.Size(143, 37);
+            this.btnCerrarAPP.TabIndex = 6;
+            this.btnCerrarAPP.Text = "Cerrar Aplicación";
+            this.btnCerrarAPP.UseVisualStyleBackColor = true;
+            this.btnCerrarAPP.Click += new System.EventHandler(this.btnCerrarAPP_Click);
+            // 
             // FrmMantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 590);
+            this.Controls.Add(this.btnCerrarAPP);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.grpGestion);
             this.Controls.Add(this.lblFichajes);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtvEmpleados);
             this.Name = "FrmMantenimiento";
             this.Text = "Funciones de Mantenimiento";
             this.Load += new System.EventHandler(this.FrmMantenimiento_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.grpGestion.ResumeLayout(false);
             this.grpGestion.PerformLayout();
@@ -268,7 +331,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtvEmpleados;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblFichajes;
@@ -288,5 +351,11 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.TextBox txtDir;
         private System.Windows.Forms.Label lblDir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn admin;
+        private System.Windows.Forms.Button btnCerrarAPP;
     }
 }

@@ -156,5 +156,39 @@ namespace AEV7.Clases
             }
 
         }
+
+        public static List<Empleado> ListadoEmpleados()
+        {
+            List<Empleado> lista = new List<Empleado>();
+            string consulta = String.Format("SELECT * FROM empleado WHERE borrado = false;");
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)   // En caso que se hallen registros en el objeto reader
+            {
+                // Recorremos el reader y cargamos la lista de empleados.
+                while (reader.Read())
+                {
+                    Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                        reader.GetString(3), reader.GetBoolean(4), reader.GetString(6));
+                    lista.Add(user);
+                }
+                reader.Close();
+            }
+            return lista;
+        }
+
+        public static int BorrarEmpleado(string nif)
+        {
+            int retorno;
+
+            string consulta = String.Format("UPDATE empleado SET borrado = true WHERE nif = ('{0}')", nif);
+
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+
+            retorno = comando.ExecuteNonQuery();
+
+            return retorno;
+        }
     }
 }
