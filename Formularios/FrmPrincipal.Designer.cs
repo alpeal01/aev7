@@ -51,7 +51,7 @@
             // ptbFoto
             // 
             this.ptbFoto.Image = global::AEV7.Properties.Resources.Foto_flori;
-            this.ptbFoto.Location = new System.Drawing.Point(75, 149);
+            this.ptbFoto.Location = new System.Drawing.Point(122, 149);
             this.ptbFoto.Name = "ptbFoto";
             this.ptbFoto.Size = new System.Drawing.Size(791, 409);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -176,7 +176,7 @@
             this.btnVolver.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVolver.Location = new System.Drawing.Point(172, 505);
+            this.btnVolver.Location = new System.Drawing.Point(172, 484);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(644, 53);
             this.btnVolver.TabIndex = 10;

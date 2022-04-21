@@ -92,6 +92,12 @@
     <Compile Include="Clases\ConBD.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Fichajes.cs" />
+    <Compile Include="Formularios\FrmPermanencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPermanencia.Designer.cs">
+      <DependentUpon>FrmPermanencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmPermanencia.resx">
+      <DependentUpon>FrmPermanencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMantenimiento.resx">
       <DependentUpon>FrmMantenimiento.cs</DependentUpon>
     </EmbeddedResource>

@@ -48,6 +48,10 @@ namespace AEV7.Clases
         /// <returns>True or False</returns>
         public static bool CalcLetra(string nif)
         {
+            if(nif.Length != 9)
+            {
+                return false;
+            }
             string letra = "TRWAGMYFPDXBNJZSQVHLCKE";
             string num="";
 

@@ -1,4 +1,5 @@
 ﻿using AEV7.Clases;
+using AEV7.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace AEV7
 {
@@ -152,18 +154,11 @@ namespace AEV7
 
             
         }
-
+        
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
-            if (!Empleado.CalcLetra(txtNif.Text))
-            {
-                ptbFoto.Visible = false;
-                txtMessage.Text = "El NIF no es correcto";
-            }
-            else
-            {
-                ptbFoto.Visible = false;
-            }
+            FrmPermanencia frm = new FrmPermanencia();
+            frm.ShowDialog();
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
