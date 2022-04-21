@@ -22,7 +22,7 @@ namespace AEV7
         {
             if (!Empleado.CalcLetra(txtNif.Text))
             {
-                ptbFoto.Enabled = false;
+                ptbFoto.Visible = false;
                 txtMessage.Text = "El NIF no es correcto";
             }
             else{ 
@@ -41,13 +41,15 @@ namespace AEV7
                     {
                         MessageBox.Show("No se ha podido realizar");
                     }
-
+                    
                 }
                 else
                 {
                     MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                 }
-            }
+                    ptbFoto.Visible = false;
+                    txtMessage.Text = "Fichaje realizado correctamente";
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
@@ -61,35 +63,45 @@ namespace AEV7
 
         private void btnSalida_Click(object sender, EventArgs e)
         {
-            try
+            if (!Empleado.CalcLetra(txtNif.Text))
             {
-                if (ConBD.Conexion != null)
+                ptbFoto.Visible = false;
+                txtMessage.Text = "El NIF no es correcto";
+            }
+            else
+            {
+                try
                 {
-                    ConBD.AbrirConexion();
-                    List<Empleado> lista = new List<Empleado>();
-                    lista = Empleado.BuscarEmpleado(txtNif.Text);
-                    if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
+                    if (ConBD.Conexion != null)
                     {
-                        Empleado.FicharSalida(txtNif.Text, lblHora.Text);
+                        ConBD.AbrirConexion();
+                        List<Empleado> lista = new List<Empleado>();
+                        lista = Empleado.BuscarEmpleado(txtNif.Text);
+                        if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
+                        {
+                            Empleado.FicharSalida(txtNif.Text, lblHora.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido realizar");
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("No se ha podido realizar");
+                        MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                     }
-
+                    ptbFoto.Visible = false;
+                    txtMessage.Text = "Fichaje realizado correctamente";
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-            }
-            finally
-            {
-                ConBD.CerrarConexion();
+                finally
+                {
+                    ConBD.CerrarConexion();
+                }
             }
         }
 
