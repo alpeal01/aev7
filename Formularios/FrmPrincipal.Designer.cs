@@ -39,7 +39,7 @@
             this.btnMantenimiento = new System.Windows.Forms.Button();
             this.btnPermanencia = new System.Windows.Forms.Button();
             this.grbDiaHora = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tmrReloj = new System.Windows.Forms.Timer(this.components);
@@ -51,7 +51,7 @@
             // ptbFoto
             // 
             this.ptbFoto.Image = global::AEV7.Properties.Resources.Foto_flori;
-            this.ptbFoto.Location = new System.Drawing.Point(96, 165);
+            this.ptbFoto.Location = new System.Drawing.Point(75, 149);
             this.ptbFoto.Name = "ptbFoto";
             this.ptbFoto.Size = new System.Drawing.Size(791, 409);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,14 +161,14 @@
             this.grbDiaHora.TabIndex = 8;
             this.grbDiaHora.TabStop = false;
             // 
-            // textBox1
+            // txtMessage
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
-            this.textBox1.Location = new System.Drawing.Point(172, 165);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(644, 290);
-            this.textBox1.TabIndex = 9;
+            this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
+            this.txtMessage.Location = new System.Drawing.Point(172, 165);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(644, 290);
+            this.txtMessage.TabIndex = 9;
             // 
             // btnVolver
             // 
@@ -198,7 +198,7 @@
             this.ClientSize = new System.Drawing.Size(1483, 607);
             this.Controls.Add(this.ptbFoto);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.grbDiaHora);
             this.Controls.Add(this.btnPermanencia);
             this.Controls.Add(this.btnMantenimiento);
@@ -230,7 +230,7 @@
         private System.Windows.Forms.Button btnMantenimiento;
         private System.Windows.Forms.Button btnPermanencia;
         private System.Windows.Forms.GroupBox grbDiaHora;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Timer tmrReloj;

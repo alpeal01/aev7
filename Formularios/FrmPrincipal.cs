@@ -20,6 +20,12 @@ namespace AEV7
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
+            if (!Empleado.CalcLetra(txtNif.Text))
+            {
+                ptbFoto.Enabled = false;
+                txtMessage.Text = "El NIF no es correcto";
+            }
+            else{ 
             try
             {
                 if (ConBD.Conexion != null)
@@ -50,6 +56,7 @@ namespace AEV7
             {
                 ConBD.CerrarConexion();
             }
+        }
         }
 
         private void btnSalida_Click(object sender, EventArgs e)
