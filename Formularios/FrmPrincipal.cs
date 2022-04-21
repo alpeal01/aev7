@@ -35,8 +35,18 @@ namespace AEV7
                     lista = Empleado.BuscarEmpleado(txtNif.Text);
                     if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
                     {
-                        Empleado.FicharEntrada(txtNif.Text, lblHora.Text);
-                    }
+                            if (Empleado.compFicharEntrada(txtNif.Text))
+                            {
+                                ptbFoto.Visible = false;
+                                txtMessage.Text = "Empleado ya ha fichado";
+                            }
+                            else
+                            {
+                                Empleado.FicharEntrada(txtNif.Text, lblHora.Text);
+                                ptbFoto.Visible = false;
+                                txtMessage.Text = "Fichaje realizado correctamente";
+                            }
+                        }
                     else
                     {
                         MessageBox.Show("No se ha podido realizar");
@@ -47,8 +57,6 @@ namespace AEV7
                 {
                     MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                 }
-                    ptbFoto.Visible = false;
-                    txtMessage.Text = "Fichaje realizado correctamente";
                 }
             catch (Exception ex)
             {
@@ -79,7 +87,17 @@ namespace AEV7
                         lista = Empleado.BuscarEmpleado(txtNif.Text);
                         if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
                         {
-                            Empleado.FicharSalida(txtNif.Text, lblHora.Text);
+                            if (!Empleado.compFicharEntrada(txtNif.Text))
+                            {
+                                ptbFoto.Visible = false;
+                                txtMessage.Text = "Empleado no tiene entrada fichada";
+                            }
+                            else
+                            {
+                                Empleado.FicharSalida(txtNif.Text, lblHora.Text);
+                                ptbFoto.Visible = false;
+                                txtMessage.Text = "Fichaje realizado correctamente";
+                            }
                         }
                         else
                         {
@@ -91,8 +109,6 @@ namespace AEV7
                     {
                         MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                     }
-                    ptbFoto.Visible = false;
-                    txtMessage.Text = "Fichaje realizado correctamente";
                 }
                 catch (Exception ex)
                 {

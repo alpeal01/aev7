@@ -129,12 +129,33 @@ namespace AEV7.Clases
             string consulta = String.Format("UPDATE fichaje SET f_salida = true, h_salida = ('{1}') WHERE nif_empleado = ('{0}')", nif, hora);
 
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
-
+            
             retorno = comando.ExecuteNonQuery();
 
             return retorno;
         }
+        
+        public static bool compFicharEntrada(string nif)
+        {
+            int retorno;
+            string consulta = String.Format("SELECT count(*) FROM fichaje WHERE nif_empleado = ('{0}') AND f_entrada = true and f_salida = false", nif);
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+            retorno = reader.GetInt32(0);
+            reader.Close();
 
+            if (retorno == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+      
 
     }
 }
