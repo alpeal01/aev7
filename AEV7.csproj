@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Clases\ConBD.cs" />
     <Compile Include="Clases\Empleado.cs" />
+    <Compile Include="Clases\Fichajes.cs" />
     <Compile Include="Formularios\FrmMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>

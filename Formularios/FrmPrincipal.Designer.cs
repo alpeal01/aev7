@@ -169,6 +169,7 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(644, 290);
             this.txtMessage.TabIndex = 9;
+            this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnVolver
             // 

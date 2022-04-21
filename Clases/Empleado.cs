@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,7 @@ namespace AEV7.Clases
             this.clave = clave;
 
         }
+
         /// <summary>
         /// Calcular la letra del nif y devulve si es cierta o no
         /// </summary>
@@ -94,9 +96,9 @@ namespace AEV7.Clases
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
-            if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+            if (reader.HasRows)   // En caso que se hallen registros en el objeto reader
             {
-                // Recorremos el reader y cargamos la lista de usuarios.
+                // Recorremos el reader y cargamos la lista de empleados.
                 while (reader.Read())
                 {
                     Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
@@ -129,12 +131,11 @@ namespace AEV7.Clases
             string consulta = String.Format("UPDATE fichaje SET f_salida = true, h_salida = ('{1}') WHERE nif_empleado = ('{0}')", nif, hora);
 
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
-            
+
             retorno = comando.ExecuteNonQuery();
 
             return retorno;
         }
-        
         public static bool compFicharEntrada(string nif)
         {
             int retorno;
@@ -155,7 +156,5 @@ namespace AEV7.Clases
             }
 
         }
-      
-
     }
 }

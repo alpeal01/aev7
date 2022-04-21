@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,16 +26,17 @@ namespace AEV7
                 ptbFoto.Visible = false;
                 txtMessage.Text = "El NIF no es correcto";
             }
-            else{ 
-            try
+            else
             {
-                if (ConBD.Conexion != null)
+                try
                 {
-                    ConBD.AbrirConexion();
-                    List<Empleado> lista = new List<Empleado>();
-                    lista = Empleado.BuscarEmpleado(txtNif.Text);
-                    if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
+                    if (ConBD.Conexion != null)
                     {
+                        ConBD.AbrirConexion();
+                        List<Empleado> lista = new List<Empleado>();
+                        lista = Empleado.BuscarEmpleado(txtNif.Text);
+                        if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
+                        {
                             if (Empleado.compFicharEntrada(txtNif.Text))
                             {
                                 ptbFoto.Visible = false;
@@ -47,26 +49,26 @@ namespace AEV7
                                 txtMessage.Text = "Fichaje realizado correctamente";
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido realizar");
+                        }
+
+                    }
                     else
                     {
-                        MessageBox.Show("No se ha podido realizar");
+                        MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                     }
-                    
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
                 }
+                finally
+                {
+                    ConBD.CerrarConexion();
                 }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
-            finally
-            {
-                ConBD.CerrarConexion();
-            }
-        }
         }
 
         private void btnSalida_Click(object sender, EventArgs e)
@@ -123,12 +125,45 @@ namespace AEV7
 
         private void btnPresencia_Click(object sender, EventArgs e)
         {
-            ptbFoto.Visible = false;
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    string mensaje = Fichajes.ListadoEmpleados();
+                    ptbFoto.Visible = false;
+                    txtMessage.Text = mensaje;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+
+
+            
         }
 
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
-
+            if (!Empleado.CalcLetra(txtNif.Text))
+            {
+                ptbFoto.Visible = false;
+                txtMessage.Text = "El NIF no es correcto";
+            }
+            else
+            {
+                ptbFoto.Visible = false;
+            }
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
