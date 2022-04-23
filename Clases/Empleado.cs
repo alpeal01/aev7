@@ -57,7 +57,7 @@ namespace AEV7.Clases
 
             for (int i = 0; i < nif.Length -1; i++)
             {
-                if (nif[i] > '0' && nif[i] < '9')
+                if (char.IsDigit(nif[i]))
                 {
                     num += nif[i];
                 }

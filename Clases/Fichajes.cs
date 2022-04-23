@@ -124,10 +124,11 @@ namespace AEV7.Clases
 
             if (reader.HasRows)   // En caso que se hallen registros en el objeto reader
             {
-                Fichajes user = new Fichajes();
+             
                 // Recorremos el reader y cargamos la lista de empleados.
                 while (reader.Read())
                 {
+                    Fichajes user = new Fichajes();
                     user.Nif = reader.GetString(0);
                     user.Dia = reader.GetString(1);
                     user.Hora = reader.GetString(2);

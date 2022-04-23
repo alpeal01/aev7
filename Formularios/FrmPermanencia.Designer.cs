@@ -102,6 +102,7 @@
             this.txtNif.Name = "txtNif";
             this.txtNif.Size = new System.Drawing.Size(163, 20);
             this.txtNif.TabIndex = 1;
+            this.txtNif.TextChanged += new System.EventHandler(this.txtNif_TextChanged);
             // 
             // lblNIF
             // 
