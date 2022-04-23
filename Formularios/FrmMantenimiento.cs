@@ -26,15 +26,14 @@ namespace AEV7
             }
         }
 
-        public void RellenarDataGridFich()
+        public void RellenarDataGridFich(bool comprobar)
         {
             dtgFichajes.Rows.Clear();
-            bool comprobar = false;
-            List<Fichajes> lista = new List<Fichajes>();
-            lista = Fichajes.ListadoFichajes(comprobar);
-            for (int i = 0; i < lista.Count; i++)
+            List<Fichajes> listado = new List<Fichajes>();
+            listado = Fichajes.ListadoFichajes(comprobar);
+            for (int j = 0; j < listado.Count; j++)
             {
-                dtgFichajes.Rows.Add(lista[i].Nif, lista[i].Dia, lista[i].Hora, lista[i].Salida);
+                dtgFichajes.Rows.Add(listado[j].Nif, listado[j].Dia, listado[j].Hora, listado[j].Salida);
             }
 
 
@@ -99,8 +98,9 @@ namespace AEV7
 
         private void FrmMantenimiento_Load(object sender, EventArgs e)
         {
+            bool comprobar = false;
             RellenarDataGridEmp();
-            RellenarDataGridFich();
+            RellenarDataGridFich(comprobar);
             
         }
 
@@ -136,7 +136,7 @@ namespace AEV7
         private void btnCerrarAPP_Click(object sender, EventArgs e)
         {
             this.Close();
-            System.Environment.Exit(1);
+            Environment.Exit(1);
         }
         /// <summary>
         /// Al pulsar doble clic borra un empleado
@@ -175,6 +175,7 @@ namespace AEV7
             }
         }
 
+<<<<<<< HEAD
         /// <summary>
         /// Cambia a mayuscula la letra del nif automaticamente
         /// </summary>
@@ -183,6 +184,60 @@ namespace AEV7
         private void txtNif_TextChanged(object sender, EventArgs e)
         {
             txtNif.Text = txtNif.Text.ToUpper();
+=======
+        private void btnHoy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    bool comprobar = false;
+                    ConBD.AbrirConexion();
+                    RellenarDataGridFich(comprobar);
+
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+        }
+
+        private void btnEmp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    bool comprobar = true;
+                    ConBD.AbrirConexion();
+                    RellenarDataGridFich(comprobar);
+
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+>>>>>>> 9471ad6bda12f3bc1245306498b35c450426222d
         }
     }
 }

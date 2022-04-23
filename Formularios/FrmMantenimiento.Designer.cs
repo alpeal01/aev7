@@ -337,6 +337,7 @@
             this.btnHoy.TabIndex = 8;
             this.btnHoy.Text = "Fichajes de Hoy";
             this.btnHoy.UseVisualStyleBackColor = true;
+            this.btnHoy.Click += new System.EventHandler(this.btnHoy_Click);
             // 
             // btnEmp
             // 
@@ -347,6 +348,7 @@
             this.btnEmp.TabIndex = 9;
             this.btnEmp.Text = "Registro de Fichajes";
             this.btnEmp.UseVisualStyleBackColor = true;
+            this.btnEmp.Click += new System.EventHandler(this.btnEmp_Click);
             // 
             // DNI
             // 

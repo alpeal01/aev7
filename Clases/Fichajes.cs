@@ -61,7 +61,7 @@ namespace AEV7.Clases
         {
             string mensaje = "Empleados actualmente activos:";
             List<Fichajes> lista = new List<Fichajes>();
-            string consulta = String.Format("SELECT nombre, apellido, h_entrada FROM empleado INNER JOIN fichaje ON nif = nif_empleado WHERE fichaje.dia = CURRENT_DATE;");
+            string consulta = String.Format("SELECT nombre, apellido, h_entrada FROM empleado INNER JOIN fichaje ON nif = nif_empleado WHERE fichaje.dia = CURRENT_DATE AND fichaje.f_salida = false;");
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
@@ -124,17 +124,29 @@ namespace AEV7.Clases
 
             if (reader.HasRows)   // En caso que se hallen registros en el objeto reader
             {
+<<<<<<< HEAD
              
                 // Recorremos el reader y cargamos la lista de empleados.
                 while (reader.Read())
                 {
+=======
+                
+                // Recorremos el reader y cargamos la lista de fichajes.
+                while (reader.Read())
+                {
+                    DateTime fecha = DateTime.Parse(reader.GetString(1));
+>>>>>>> 9471ad6bda12f3bc1245306498b35c450426222d
                     Fichajes user = new Fichajes();
                     user.Nif = reader.GetString(0);
-                    user.Dia = reader.GetString(1);
+                    user.Dia = fecha.ToString("dd-MM-yyyy");
                     user.Hora = reader.GetString(2);
                     if (comprobar == false)
                     {
-                        user.Salida = "\t-";
+                        user.Salida = "-";
+                    }
+                    else
+                    {
+                        user.Salida = reader.GetString(3);
                     }
                     lista.Add(user);
                 }
