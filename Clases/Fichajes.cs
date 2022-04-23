@@ -45,13 +45,12 @@ namespace AEV7.Clases
             salida = s;
             tiempo = t;
         }
-<<<<<<< HEAD
+
         /// <summary>
         /// Lista de fichajes de empleado
         /// </summary>
         /// <returns>devuelve un string con los fichajes</returns>
-        public static string ListadoEmpleados()
-=======
+
 
         public Fichajes()
         {
@@ -59,7 +58,6 @@ namespace AEV7.Clases
         }
 
         public static string LEmpleados()
->>>>>>> e50592e4ee8739b96b8f1ba37ea45a86525becea
         {
             string mensaje = "Empleados actualmente activos:";
             List<Fichajes> lista = new List<Fichajes>();
