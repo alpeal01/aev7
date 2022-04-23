@@ -95,7 +95,7 @@ namespace AEV7.Clases
         {
             List<Fichajes> lista = new List<Fichajes>();
             string consulta = String.Format("SELECT dia, h_entrada, h_salida FROM empleado INNER JOIN fichaje ON nif = nif_empleado " +
-                "WHERE  nif_empleado = '{0}' and fichaje.dia BETWEEN '{1}' and '{2}' ", nif, d1.ToString("yyyy-MM-dd"), d2.ToString("yyyy-MM-dd"));
+                "WHERE  nif_empleado = '{0}' and fichaje.dia BETWEEN '{1}' and '{2}' and f_salida = true ", nif, d1.ToString("yyyy-MM-dd"), d2.ToString("yyyy-MM-dd"));
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
@@ -104,10 +104,12 @@ namespace AEV7.Clases
                 // Recorremos el reader y cargamos la lista de usuarios.
                 while (reader.Read())
                 {
-                    double tiempo = TimeSpan.Parse(reader.GetString(2)).TotalMinutes - TimeSpan.Parse(reader.GetString(1)).TotalMinutes;
-                    Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2), tiempo);
-
-                    lista.Add(fichaje);
+                    
+                        double tiempo = TimeSpan.Parse(reader.GetString(2)).TotalMinutes - TimeSpan.Parse(reader.GetString(1)).TotalMinutes;
+                        Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2), tiempo);
+                        lista.Add(fichaje);
+                    
+ 
                 }
                 reader.Close();
             }
