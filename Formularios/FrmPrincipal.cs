@@ -132,7 +132,7 @@ namespace AEV7
                 if (ConBD.Conexion != null)
                 {
                     ConBD.AbrirConexion();
-                    string mensaje = Fichajes.ListadoEmpleados();
+                    string mensaje = Fichajes.LEmpleados();
                     ptbFoto.Visible = false;
                     txtMessage.Text = mensaje;
 

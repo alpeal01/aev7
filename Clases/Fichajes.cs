@@ -9,6 +9,7 @@ namespace AEV7.Clases
 {
     internal class Fichajes
     {
+        private string nif;
         private string nombre;
         private string apellidos;
         private string dia;
@@ -16,12 +17,14 @@ namespace AEV7.Clases
         private string salida;
         private double tiempo;
 
-        public string Dia { get { return dia; } }
-        public string Nombre { get { return nombre; } }
-        public string Apellidos { get { return apellidos; } }
-        public string Hora { get { return hora; } }
-        public string Salida { get { return salida; } }
-        public double Tiempo { get { return tiempo; } }
+
+        public string Nif { get { return nif; } set { nif = value; } }
+        public string Dia { get { return dia; } set { dia = value; } }
+        public string Nombre { get { return nombre; } set { nombre = value; } }
+        public string Apellidos { get { return apellidos; } set { apellidos = value; } }
+        public string Hora { get { return hora; } set { hora = value; } }
+        public string Salida { get { return salida; } set { salida = value; } }
+        public double Tiempo { get { return tiempo; } set { tiempo = value; } }
         
 
 
@@ -43,7 +46,12 @@ namespace AEV7.Clases
             tiempo = t;
         }
 
-        public static string ListadoEmpleados()
+        public Fichajes()
+        {
+
+        }
+
+        public static string LEmpleados()
         {
             string mensaje = "Empleados actualmente activos:";
             List<Fichajes> lista = new List<Fichajes>();
@@ -88,6 +96,34 @@ namespace AEV7.Clases
                     Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2), tiempo);
 
                     lista.Add(fichaje);
+                }
+                reader.Close();
+            }
+            return lista;
+        }
+
+        public static List<Fichajes> ListadoFichajes(bool comprobar)
+        {
+            List<Fichajes> lista = new List<Fichajes>();
+            string consulta = String.Format("SELECT nif_empleado, dia, h_entrada, h_salida FROM fichaje WHERE f_salida = ");
+            consulta += " " + comprobar + ";";
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.HasRows)   // En caso que se hallen registros en el objeto reader
+            {
+                Fichajes user = new Fichajes();
+                // Recorremos el reader y cargamos la lista de empleados.
+                while (reader.Read())
+                {
+                    user.Nif = reader.GetString(0);
+                    user.Dia = reader.GetString(1);
+                    user.Hora = reader.GetString(2);
+                    if (comprobar == false)
+                    {
+                        user.Salida = "\t-";
+                    }
+                    lista.Add(user);
                 }
                 reader.Close();
             }

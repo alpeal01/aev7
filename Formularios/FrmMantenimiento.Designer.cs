@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtvEmpleados = new System.Windows.Forms.DataGridView();
+            this.dtgEmpleados = new System.Windows.Forms.DataGridView();
             this.nif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgFichajes = new System.Windows.Forms.DataGridView();
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblFichajes = new System.Windows.Forms.Label();
             this.grpGestion = new System.Windows.Forms.GroupBox();
@@ -54,26 +54,33 @@
             this.lblGestion = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnCerrarAPP = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.lblInformacion = new System.Windows.Forms.Label();
+            this.btnHoy = new System.Windows.Forms.Button();
+            this.btnEmp = new System.Windows.Forms.Button();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hora_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.h_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgFichajes)).BeginInit();
             this.grpGestion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtvEmpleados
+            // dtgEmpleados
             // 
-            this.dtvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nif,
             this.nombre,
             this.apellido,
             this.direccion,
             this.admin});
-            this.dtvEmpleados.Location = new System.Drawing.Point(105, 79);
-            this.dtvEmpleados.Name = "dtvEmpleados";
-            this.dtvEmpleados.ReadOnly = true;
-            this.dtvEmpleados.Size = new System.Drawing.Size(682, 199);
-            this.dtvEmpleados.TabIndex = 0;
-            this.dtvEmpleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEmpleados_CellContentDoubleClick);
+            this.dtgEmpleados.Location = new System.Drawing.Point(105, 79);
+            this.dtgEmpleados.Name = "dtgEmpleados";
+            this.dtgEmpleados.ReadOnly = true;
+            this.dtgEmpleados.Size = new System.Drawing.Size(682, 199);
+            this.dtgEmpleados.TabIndex = 0;
+            this.dtgEmpleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEmpleados_CellContentDoubleClick);
             // 
             // nif
             // 
@@ -110,14 +117,19 @@
             this.admin.Name = "admin";
             this.admin.ReadOnly = true;
             // 
-            // dataGridView2
+            // dtgFichajes
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(105, 354);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(682, 199);
-            this.dataGridView2.TabIndex = 1;
+            this.dtgFichajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgFichajes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DNI,
+            this.Dia,
+            this.hora_entrada,
+            this.h_salida});
+            this.dtgFichajes.Location = new System.Drawing.Point(105, 354);
+            this.dtgFichajes.Name = "dtgFichajes";
+            this.dtgFichajes.ReadOnly = true;
+            this.dtgFichajes.Size = new System.Drawing.Size(469, 199);
+            this.dtgFichajes.TabIndex = 1;
             // 
             // lblInfo
             // 
@@ -223,6 +235,7 @@
             // txtNif
             // 
             this.txtNif.Location = new System.Drawing.Point(84, 92);
+            this.txtNif.MaxLength = 9;
             this.txtNif.Name = "txtNif";
             this.txtNif.Size = new System.Drawing.Size(100, 20);
             this.txtNif.TabIndex = 6;
@@ -286,7 +299,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnCerrar.Location = new System.Drawing.Point(901, 495);
+            this.btnCerrar.Location = new System.Drawing.Point(1081, 496);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(101, 39);
             this.btnCerrar.TabIndex = 5;
@@ -305,23 +318,80 @@
             this.btnCerrarAPP.UseVisualStyleBackColor = true;
             this.btnCerrarAPP.Click += new System.EventHandler(this.btnCerrarAPP_Click);
             // 
+            // lblInformacion
+            // 
+            this.lblInformacion.AutoSize = true;
+            this.lblInformacion.Location = new System.Drawing.Point(573, 281);
+            this.lblInformacion.Name = "lblInformacion";
+            this.lblInformacion.Size = new System.Drawing.Size(178, 13);
+            this.lblInformacion.TabIndex = 7;
+            this.lblInformacion.Text = "Doble click para borrar un empleado";
+            // 
+            // btnHoy
+            // 
+            this.btnHoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnHoy.Location = new System.Drawing.Point(611, 370);
+            this.btnHoy.Name = "btnHoy";
+            this.btnHoy.Size = new System.Drawing.Size(151, 35);
+            this.btnHoy.TabIndex = 8;
+            this.btnHoy.Text = "Fichajes de Hoy";
+            this.btnHoy.UseVisualStyleBackColor = true;
+            // 
+            // btnEmp
+            // 
+            this.btnEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEmp.Location = new System.Drawing.Point(611, 436);
+            this.btnEmp.Name = "btnEmp";
+            this.btnEmp.Size = new System.Drawing.Size(151, 35);
+            this.btnEmp.TabIndex = 9;
+            this.btnEmp.Text = "Registro de Fichajes";
+            this.btnEmp.UseVisualStyleBackColor = true;
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // Dia
+            // 
+            this.Dia.HeaderText = "Dia";
+            this.Dia.Name = "Dia";
+            this.Dia.ReadOnly = true;
+            // 
+            // hora_entrada
+            // 
+            this.hora_entrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hora_entrada.HeaderText = "Hora Entrada";
+            this.hora_entrada.Name = "hora_entrada";
+            this.hora_entrada.ReadOnly = true;
+            // 
+            // h_salida
+            // 
+            this.h_salida.HeaderText = "Hora Salida";
+            this.h_salida.Name = "h_salida";
+            this.h_salida.ReadOnly = true;
+            // 
             // FrmMantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1216, 590);
+            this.ClientSize = new System.Drawing.Size(1216, 605);
+            this.Controls.Add(this.btnEmp);
+            this.Controls.Add(this.btnHoy);
+            this.Controls.Add(this.lblInformacion);
             this.Controls.Add(this.btnCerrarAPP);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.grpGestion);
             this.Controls.Add(this.lblFichajes);
             this.Controls.Add(this.lblInfo);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dtvEmpleados);
+            this.Controls.Add(this.dtgFichajes);
+            this.Controls.Add(this.dtgEmpleados);
             this.Name = "FrmMantenimiento";
             this.Text = "Funciones de Mantenimiento";
             this.Load += new System.EventHandler(this.FrmMantenimiento_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtvEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgFichajes)).EndInit();
             this.grpGestion.ResumeLayout(false);
             this.grpGestion.PerformLayout();
             this.ResumeLayout(false);
@@ -331,8 +401,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtvEmpleados;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgEmpleados;
+        private System.Windows.Forms.DataGridView dtgFichajes;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblFichajes;
         private System.Windows.Forms.GroupBox grpGestion;
@@ -357,5 +427,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn admin;
         private System.Windows.Forms.Button btnCerrarAPP;
+        private System.Windows.Forms.Label lblInformacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora_entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn h_salida;
+        private System.Windows.Forms.Button btnHoy;
+        private System.Windows.Forms.Button btnEmp;
     }
 }

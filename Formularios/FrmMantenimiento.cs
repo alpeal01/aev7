@@ -9,15 +9,29 @@ namespace AEV7
     public partial class FrmMantenimiento : Form
     {
 
-        public void RellenarDataGrid()
+        public void RellenarDataGridEmp()
         {
-            dtvEmpleados.Rows.Clear();
+            dtgEmpleados.Rows.Clear();
             List<Empleado> lista = new List<Empleado>();
             lista = Empleado.ListadoEmpleados();
             for (int i = 0; i < lista.Count; i++)
             {
-                dtvEmpleados.Rows.Add(lista[i].Nif, lista[i].Nombre, lista[i].Apellido, lista[i].Direccion, lista[i].Admin);
+                dtgEmpleados.Rows.Add(lista[i].Nif, lista[i].Nombre, lista[i].Apellido, lista[i].Direccion, lista[i].Admin);
             }
+        }
+
+        public void RellenarDataGridFich()
+        {
+            dtgFichajes.Rows.Clear();
+            bool comprobar = false;
+            List<Fichajes> lista = new List<Fichajes>();
+            lista = Fichajes.ListadoFichajes(comprobar);
+            for (int i = 0; i < lista.Count; i++)
+            {
+                dtgFichajes.Rows.Add(lista[i].Nif, lista[i].Dia, lista[i].Hora, lista[i].Salida);
+            }
+
+
         }
 
         public FrmMantenimiento()
@@ -40,8 +54,6 @@ namespace AEV7
             }
             else
             {
-                
-
                 try { 
                     if (ConBD.Conexion != null)
                     {
@@ -73,18 +85,39 @@ namespace AEV7
 
         private void FrmMantenimiento_Load(object sender, EventArgs e)
         {
-            RellenarDataGrid();
+            RellenarDataGridEmp();
+            RellenarDataGridFich();
             
         }
 
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ConBD.AbrirConexion();
-            Empleado.BorrarEmpleado(txtNif.Text);
-            RellenarDataGrid();
-            ConBD.CerrarConexion();
-        }
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    Empleado.BorrarEmpleado(txtNif.Text);
+                    RellenarDataGridEmp();
+
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+        }        
+    
 
         private void btnCerrarAPP_Click(object sender, EventArgs e)
         {
@@ -95,13 +128,35 @@ namespace AEV7
         private void dtvEmpleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id;
+            id = dtgEmpleados.CurrentRow.Cells[0].Value.ToString();
 
-            id = dtvEmpleados.CurrentRow.Cells[0].Value.ToString();
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
 
-            ConBD.AbrirConexion();
-            Empleado.BorrarEmpleado(id);
-            RellenarDataGrid();
-            ConBD.CerrarConexion();
+                    ConBD.AbrirConexion();
+                    Empleado.BorrarEmpleado(id);
+                    RellenarDataGridEmp();
+                    ConBD.CerrarConexion();
+
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
         }
+
+
     }
 }
