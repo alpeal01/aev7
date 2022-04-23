@@ -43,7 +43,7 @@ namespace AEV7.Formularios
 
                             foreach (Fichajes f in list)
                             {
-                                string duracion = (f.Tiempo / 60 + "h " + f.Tiempo % 60 + "min").ToString();
+                                string duracion = (Math.Truncate(f.Tiempo / 60) + "h " + Math.Truncate(f.Tiempo % 60) + "min").ToString();
                                 
                                 dgvPerm.Rows.Add(f.Dia, f.Hora, f.Salida, duracion);
                             }

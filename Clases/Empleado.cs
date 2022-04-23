@@ -57,7 +57,14 @@ namespace AEV7.Clases
 
             for (int i = 0; i < nif.Length -1; i++)
             {
-                num += nif[i];
+                if (nif[i] > '0' && nif[i] < '9')
+                {
+                    num += nif[i];
+                }
+                else
+                {
+                    return false;
+                }
             }
             char let = letra[int.Parse(num) % 23];
 
@@ -92,7 +99,11 @@ namespace AEV7.Clases
 
             return retorno;
         }
-
+        /// <summary>
+        /// Función que busca un empleado en la base de datos
+        /// </summary>
+        /// <param name="nif"></param>
+        /// <returns> lista de empelados</returns>
         public static List<Empleado> BuscarEmpleado(string nif)
         {
             List<Empleado> lista = new List<Empleado>();
@@ -114,7 +125,12 @@ namespace AEV7.Clases
             return lista;
 
         }
-
+        /// <summary>
+        /// Funcion que busca
+        /// </summary>
+        /// <param name="nif"></param>
+        /// <param name="hora"></param>
+        /// <returns></returns>
         public static int FicharEntrada(string nif, string hora)
         {
             int retorno;
@@ -128,7 +144,12 @@ namespace AEV7.Clases
 
             return retorno;
         }
-
+        /// <summary>
+        /// Funcio que fiha un empleado a la salida de la empresa en la base de datos
+        /// </summary>
+        /// <param name="nif"></param>
+        /// <param name="hora"></param>
+        /// <returns></returns>
         public static int FicharSalida(string nif, string hora)
         {
             int retorno;
@@ -140,6 +161,12 @@ namespace AEV7.Clases
 
             return retorno;
         }
+        
+        /// <summary>
+        /// Comprueba si el empelado a fichado de entrada
+        /// </summary>
+        /// <param name="nif"></param>
+        /// <returns>True si a fichado o false si no</returns>
         public static bool compFicharEntrada(string nif)
         {
             int retorno;
@@ -160,7 +187,10 @@ namespace AEV7.Clases
             }
 
         }
-
+        /// <summary>
+        /// Lista a todo los empleado que no esten de baja;
+        /// </summary>
+        /// <returns></returns>
         public static List<Empleado> ListadoEmpleados()
         {
             List<Empleado> lista = new List<Empleado>();
@@ -181,7 +211,11 @@ namespace AEV7.Clases
             }
             return lista;
         }
-
+        /// <summary>
+        /// Cambia el estado de borrado a true en un empelado
+        /// </summary>
+        /// <param name="nif"></param>
+        /// <returns></returns>
         public static int BorrarEmpleado(string nif)
         {
             int retorno;

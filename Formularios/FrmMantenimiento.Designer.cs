@@ -223,9 +223,11 @@
             // txtNif
             // 
             this.txtNif.Location = new System.Drawing.Point(84, 92);
+            this.txtNif.MaxLength = 9;
             this.txtNif.Name = "txtNif";
             this.txtNif.Size = new System.Drawing.Size(100, 20);
             this.txtNif.TabIndex = 6;
+            this.txtNif.TextChanged += new System.EventHandler(this.txtNif_TextChanged);
             // 
             // chbAdmin
             // 

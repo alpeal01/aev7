@@ -20,7 +20,7 @@ namespace AEV7
         {
             InitializeComponent();
         }
-
+        int tik = 0;
         private void btnEntrada_Click(object sender, EventArgs e)
         {
             if (!Empleado.CalcLetra(txtNif.Text))
@@ -184,7 +184,32 @@ namespace AEV7
 
         private void tmrReloj_Tick(object sender, EventArgs e)
         {
+            
             lblHora.Text = DateTime.Now.ToString("T");
+            
+            if(ptbFoto.Visible == false && tik == 1000)
+            {
+                ptbFoto.Visible = true;
+                txtMessage.Clear();
+                tik = 0;
+            }else if (tik == 1000)
+            {
+                tik = 0;
+            }
+            else
+            {
+                tik++;
+            }
+                
+            
+
+            
+            
+        }
+
+        private void txtNif_TextChanged(object sender, EventArgs e)
+        {
+            txtNif.Text = txtNif.Text.ToUpper();
         }
     }
 }

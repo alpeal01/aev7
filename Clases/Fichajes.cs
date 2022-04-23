@@ -42,7 +42,10 @@ namespace AEV7.Clases
             salida = s;
             tiempo = t;
         }
-
+        /// <summary>
+        /// Lista de fichajes de empleado
+        /// </summary>
+        /// <returns>devuelve un string con los fichajes</returns>
         public static string ListadoEmpleados()
         {
             string mensaje = "Empleados actualmente activos:";
@@ -70,7 +73,13 @@ namespace AEV7.Clases
             return mensaje;
 
         }
-        
+        /// <summary>
+        /// Muestra la permanencia de los empleados de fichajes
+        /// </summary>
+        /// <param name="nif"></param>
+        /// <param name="d1"></param>
+        /// <param name="d2"></param>
+        /// <returns>Lista de los fichajes de su permanencia</returns>
         public static List<Fichajes> permanencia(string nif,DateTime d1 , DateTime d2)
         {
             List<Fichajes> lista = new List<Fichajes>();

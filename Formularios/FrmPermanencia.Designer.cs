@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvPerm = new System.Windows.Forms.DataGridView();
+            this.fecha_dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.h_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.h_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.mySqlDataAdapter2 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.txtNif = new System.Windows.Forms.TextBox();
@@ -37,10 +41,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dtpPerm1 = new System.Windows.Forms.DateTimePicker();
             this.dtpPerm2 = new System.Windows.Forms.DateTimePicker();
-            this.fecha_dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.h_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.h_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +56,30 @@
             this.dgvPerm.Name = "dgvPerm";
             this.dgvPerm.Size = new System.Drawing.Size(570, 244);
             this.dgvPerm.TabIndex = 0;
+            // 
+            // fecha_dia
+            // 
+            this.fecha_dia.HeaderText = "Fecha";
+            this.fecha_dia.Name = "fecha_dia";
+            this.fecha_dia.ReadOnly = true;
+            // 
+            // h_entrada
+            // 
+            this.h_entrada.HeaderText = "Entrada";
+            this.h_entrada.Name = "h_entrada";
+            this.h_entrada.ReadOnly = true;
+            // 
+            // h_salida
+            // 
+            this.h_salida.HeaderText = "Salida";
+            this.h_salida.Name = "h_salida";
+            this.h_salida.ReadOnly = true;
+            // 
+            // duracion
+            // 
+            this.duracion.HeaderText = "Duración";
+            this.duracion.Name = "duracion";
+            this.duracion.ReadOnly = true;
             // 
             // mySqlDataAdapter1
             // 
@@ -74,6 +98,7 @@
             // txtNif
             // 
             this.txtNif.Location = new System.Drawing.Point(94, 46);
+            this.txtNif.MaxLength = 9;
             this.txtNif.Name = "txtNif";
             this.txtNif.Size = new System.Drawing.Size(163, 20);
             this.txtNif.TabIndex = 1;
@@ -120,30 +145,6 @@
             this.dtpPerm2.Name = "dtpPerm2";
             this.dtpPerm2.Size = new System.Drawing.Size(192, 20);
             this.dtpPerm2.TabIndex = 6;
-            // 
-            // fecha_dia
-            // 
-            this.fecha_dia.HeaderText = "Fecha";
-            this.fecha_dia.Name = "fecha_dia";
-            this.fecha_dia.ReadOnly = true;
-            // 
-            // h_entrada
-            // 
-            this.h_entrada.HeaderText = "Entrada";
-            this.h_entrada.Name = "h_entrada";
-            this.h_entrada.ReadOnly = true;
-            // 
-            // h_salida
-            // 
-            this.h_salida.HeaderText = "Salida";
-            this.h_salida.Name = "h_salida";
-            this.h_salida.ReadOnly = true;
-            // 
-            // duracion
-            // 
-            this.duracion.HeaderText = "Duración";
-            this.duracion.Name = "duracion";
-            this.duracion.ReadOnly = true;
             // 
             // FrmPermanencia
             // 

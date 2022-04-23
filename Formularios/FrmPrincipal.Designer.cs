@@ -89,6 +89,7 @@
             this.txtNif.Size = new System.Drawing.Size(425, 83);
             this.txtNif.TabIndex = 3;
             this.txtNif.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNif.TextChanged += new System.EventHandler(this.txtNif_TextChanged);
             // 
             // btnEntrada
             // 

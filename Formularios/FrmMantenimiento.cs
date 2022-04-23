@@ -8,7 +8,9 @@ namespace AEV7
 {
     public partial class FrmMantenimiento : Form
     {
-
+        /// <summary>
+        /// Rellena el datagrie con los empleados del sistema
+        /// </summary>
         public void RellenarDataGrid()
         {
             dtvEmpleados.Rows.Clear();
@@ -24,13 +26,21 @@ namespace AEV7
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Cierra el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
             this.Dispose();
         }
-
+        /// <summary>
+        /// Agrega un nuevo usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!Empleado.CalcLetra(txtNif.Text))
@@ -91,7 +101,11 @@ namespace AEV7
             this.Close();
             System.Environment.Exit(1);
         }
-
+        /// <summary>
+        /// Al pulsar doble clic borra un empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtvEmpleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id;
@@ -102,6 +116,15 @@ namespace AEV7
             Empleado.BorrarEmpleado(id);
             RellenarDataGrid();
             ConBD.CerrarConexion();
+        }
+        /// <summary>
+        /// Cambia a mayuscula la letra del nif automaticamente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtNif_TextChanged(object sender, EventArgs e)
+        {
+            txtNif.Text = txtNif.Text.ToUpper();
         }
     }
 }
