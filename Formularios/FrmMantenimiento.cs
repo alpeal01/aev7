@@ -8,15 +8,14 @@ namespace AEV7
 {
     public partial class FrmMantenimiento : Form
     {
-<<<<<<< HEAD
+
         /// <summary>
         /// Rellena el datagrie con los empleados del sistema
         /// </summary>
-        public void RellenarDataGrid()
-=======
+
 
         public void RellenarDataGridEmp()
->>>>>>> e50592e4ee8739b96b8f1ba37ea45a86525becea
+
         {
             dtgEmpleados.Rows.Clear();
             List<Empleado> lista = new List<Empleado>();
@@ -175,7 +174,7 @@ namespace AEV7
                 ConBD.CerrarConexion();
             }
         }
-<<<<<<< HEAD
+
         /// <summary>
         /// Cambia a mayuscula la letra del nif automaticamente
         /// </summary>
@@ -185,9 +184,5 @@ namespace AEV7
         {
             txtNif.Text = txtNif.Text.ToUpper();
         }
-=======
-
-
->>>>>>> e50592e4ee8739b96b8f1ba37ea45a86525becea
     }
 }
