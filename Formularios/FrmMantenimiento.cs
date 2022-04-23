@@ -175,7 +175,7 @@ namespace AEV7
             }
         }
 
-<<<<<<< HEAD
+
         /// <summary>
         /// Cambia a mayuscula la letra del nif automaticamente
         /// </summary>
@@ -183,8 +183,8 @@ namespace AEV7
         /// <param name="e"></param>
         private void txtNif_TextChanged(object sender, EventArgs e)
         {
-            txtNif.Text = txtNif.Text.ToUpper();
-=======
+            txtNif.Text = txtNif.Text.ToUpper(); }
+
         private void btnHoy_Click(object sender, EventArgs e)
         {
             try
@@ -237,7 +237,7 @@ namespace AEV7
             {
                 ConBD.CerrarConexion();
             }
->>>>>>> 9471ad6bda12f3bc1245306498b35c450426222d
+
         }
     }
 }

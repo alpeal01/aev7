@@ -25,7 +25,7 @@ namespace AEV7.Clases
         public string Hora { get { return hora; } set { hora = value; } }
         public string Salida { get { return salida; } set { salida = value; } }
         public double Tiempo { get { return tiempo; } set { tiempo = value; } }
-        
+
 
 
 
@@ -35,7 +35,7 @@ namespace AEV7.Clases
             nombre = n;
             apellidos = ap;
             hora = h;
-            
+
         }
         //permanencia
         public Fichajes(string day, string h, string s, double t)
@@ -70,7 +70,7 @@ namespace AEV7.Clases
                 // Recorremos el reader y cargamos la lista de usuarios.
                 while (reader.Read())
                 {
-                    Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2));                   
+                    Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2));
                     lista.Add(fichaje);
                 }
                 reader.Close();
@@ -91,11 +91,11 @@ namespace AEV7.Clases
         /// <param name="d1"></param>
         /// <param name="d2"></param>
         /// <returns>Lista de los fichajes de su permanencia</returns>
-        public static List<Fichajes> permanencia(string nif,DateTime d1 , DateTime d2)
+        public static List<Fichajes> permanencia(string nif, DateTime d1, DateTime d2)
         {
             List<Fichajes> lista = new List<Fichajes>();
             string consulta = String.Format("SELECT dia, h_entrada, h_salida FROM empleado INNER JOIN fichaje ON nif = nif_empleado " +
-                "WHERE  nif_empleado = '{0}' and fichaje.dia BETWEEN '{1}' and '{2}' ",nif, d1.ToString("yyyy-MM-dd"), d2.ToString("yyyy-MM-dd"));
+                "WHERE  nif_empleado = '{0}' and fichaje.dia BETWEEN '{1}' and '{2}' ", nif, d1.ToString("yyyy-MM-dd"), d2.ToString("yyyy-MM-dd"));
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
 
@@ -124,33 +124,35 @@ namespace AEV7.Clases
 
             if (reader.HasRows)   // En caso que se hallen registros en el objeto reader
             {
-<<<<<<< HEAD
-             
+
+
                 // Recorremos el reader y cargamos la lista de empleados.
                 while (reader.Read())
                 {
-=======
-                
-                // Recorremos el reader y cargamos la lista de fichajes.
-                while (reader.Read())
-                {
-                    DateTime fecha = DateTime.Parse(reader.GetString(1));
->>>>>>> 9471ad6bda12f3bc1245306498b35c450426222d
-                    Fichajes user = new Fichajes();
-                    user.Nif = reader.GetString(0);
-                    user.Dia = fecha.ToString("dd-MM-yyyy");
-                    user.Hora = reader.GetString(2);
-                    if (comprobar == false)
+
+
+                    // Recorremos el reader y cargamos la lista de fichajes.
+                    while (reader.Read())
                     {
-                        user.Salida = "-";
+                        DateTime fecha = DateTime.Parse(reader.GetString(1));
+
+                        Fichajes user = new Fichajes();
+                        user.Nif = reader.GetString(0);
+                        user.Dia = fecha.ToString("dd-MM-yyyy");
+                        user.Hora = reader.GetString(2);
+                        if (comprobar == false)
+                        {
+                            user.Salida = "-";
+                        }
+                        else
+                        {
+                            user.Salida = reader.GetString(3);
+                        }
+                        lista.Add(user);
                     }
-                    else
-                    {
-                        user.Salida = reader.GetString(3);
-                    }
-                    lista.Add(user);
+                    reader.Close();
                 }
-                reader.Close();
+                
             }
             return lista;
         }
