@@ -70,13 +70,21 @@ namespace AEV7
                 try { 
                     if (ConBD.Conexion != null)
                     {
-                        
+
                         ConBD.AbrirConexion();
-                        Empleado emp = new Empleado(txtNif.Text, txtNombre.Text, txtApellidos.Text, txtDir.Text, chbAdmin.Checked, txtCont.Text);
+                        List <Empleado> lista = Empleado.BuscarEmpleado(txtNif.Text);
+                        if (lista.Count == 0)
+                        {
+                            Empleado emp = new Empleado(txtNif.Text, txtNombre.Text, txtApellidos.Text, txtDir.Text, chbAdmin.Checked, txtCont.Text);
 
-                        Empleado.AgregarEmpleado(emp);
+                            Empleado.AgregarEmpleado(emp);
 
-                        MessageBox.Show("Empleado agregado correctamente");
+                            MessageBox.Show("Empleado agregado correctamente");
+                        }
+                        else
+                        {
+                            MessageBox.Show("El empleado ya existe");
+                        }
 
                     }
                     else
