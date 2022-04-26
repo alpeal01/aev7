@@ -60,6 +60,11 @@ namespace AEV7
         {
 
         }
+
+        private void txtNif_TextChanged(object sender, EventArgs e)
+        {
+            txtNif.Text = txtNif.Text.ToUpper();
+        }
     }
 }
     

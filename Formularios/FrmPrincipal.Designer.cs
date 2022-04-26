@@ -51,9 +51,10 @@
             // ptbFoto
             // 
             this.ptbFoto.Image = global::AEV7.Properties.Resources.Foto_flori;
-            this.ptbFoto.Location = new System.Drawing.Point(122, 149);
+            this.ptbFoto.Location = new System.Drawing.Point(152, 183);
+            this.ptbFoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(791, 409);
+            this.ptbFoto.Size = new System.Drawing.Size(1066, 504);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbFoto.TabIndex = 0;
             this.ptbFoto.TabStop = false;
@@ -63,9 +64,10 @@
             this.lblDia.AutoSize = true;
             this.lblDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblDia.Location = new System.Drawing.Point(48, 28);
+            this.lblDia.Location = new System.Drawing.Point(64, 34);
+            this.lblDia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDia.Name = "lblDia";
-            this.lblDia.Size = new System.Drawing.Size(41, 25);
+            this.lblDia.Size = new System.Drawing.Size(51, 29);
             this.lblDia.TabIndex = 1;
             this.lblDia.Text = "Día";
             // 
@@ -74,19 +76,21 @@
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblHora.Location = new System.Drawing.Point(59, 63);
+            this.lblHora.Location = new System.Drawing.Point(79, 78);
+            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(54, 25);
+            this.lblHora.Size = new System.Drawing.Size(67, 29);
             this.lblHora.TabIndex = 2;
             this.lblHora.Text = "Hora";
             // 
             // txtNif
             // 
             this.txtNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.txtNif.Location = new System.Drawing.Point(254, 56);
+            this.txtNif.Location = new System.Drawing.Point(339, 69);
+            this.txtNif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNif.MaxLength = 9;
             this.txtNif.Name = "txtNif";
-            this.txtNif.Size = new System.Drawing.Size(425, 83);
+            this.txtNif.Size = new System.Drawing.Size(565, 102);
             this.txtNif.TabIndex = 3;
             this.txtNif.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNif.TextChanged += new System.EventHandler(this.txtNif_TextChanged);
@@ -95,9 +99,10 @@
             // 
             this.btnEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnEntrada.Location = new System.Drawing.Point(1122, 207);
+            this.btnEntrada.Location = new System.Drawing.Point(1496, 255);
+            this.btnEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(229, 52);
+            this.btnEntrada.Size = new System.Drawing.Size(305, 64);
             this.btnEntrada.TabIndex = 4;
             this.btnEntrada.Text = "Entrada";
             this.btnEntrada.UseVisualStyleBackColor = false;
@@ -107,9 +112,10 @@
             // 
             this.btnSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnSalida.Location = new System.Drawing.Point(1122, 281);
+            this.btnSalida.Location = new System.Drawing.Point(1496, 346);
+            this.btnSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalida.Name = "btnSalida";
-            this.btnSalida.Size = new System.Drawing.Size(229, 56);
+            this.btnSalida.Size = new System.Drawing.Size(305, 69);
             this.btnSalida.TabIndex = 5;
             this.btnSalida.Text = "Salida";
             this.btnSalida.UseVisualStyleBackColor = false;
@@ -119,9 +125,10 @@
             // 
             this.btnPresencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnPresencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnPresencia.Location = new System.Drawing.Point(1122, 356);
+            this.btnPresencia.Location = new System.Drawing.Point(1496, 438);
+            this.btnPresencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPresencia.Name = "btnPresencia";
-            this.btnPresencia.Size = new System.Drawing.Size(229, 57);
+            this.btnPresencia.Size = new System.Drawing.Size(305, 70);
             this.btnPresencia.TabIndex = 6;
             this.btnPresencia.Text = "Presencia";
             this.btnPresencia.UseVisualStyleBackColor = false;
@@ -131,9 +138,10 @@
             // 
             this.btnMantenimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnMantenimiento.Location = new System.Drawing.Point(1122, 505);
+            this.btnMantenimiento.Location = new System.Drawing.Point(1496, 622);
+            this.btnMantenimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMantenimiento.Name = "btnMantenimiento";
-            this.btnMantenimiento.Size = new System.Drawing.Size(229, 53);
+            this.btnMantenimiento.Size = new System.Drawing.Size(305, 65);
             this.btnMantenimiento.TabIndex = 7;
             this.btnMantenimiento.Text = "Mantenimiento";
             this.btnMantenimiento.UseVisualStyleBackColor = false;
@@ -143,9 +151,10 @@
             // 
             this.btnPermanencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnPermanencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnPermanencia.Location = new System.Drawing.Point(1122, 432);
+            this.btnPermanencia.Location = new System.Drawing.Point(1496, 532);
+            this.btnPermanencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPermanencia.Name = "btnPermanencia";
-            this.btnPermanencia.Size = new System.Drawing.Size(229, 54);
+            this.btnPermanencia.Size = new System.Drawing.Size(305, 66);
             this.btnPermanencia.TabIndex = 7;
             this.btnPermanencia.Text = "Permanencia";
             this.btnPermanencia.UseVisualStyleBackColor = false;
@@ -156,20 +165,23 @@
             this.grbDiaHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.grbDiaHora.Controls.Add(this.lblDia);
             this.grbDiaHora.Controls.Add(this.lblHora);
-            this.grbDiaHora.Location = new System.Drawing.Point(1190, 28);
+            this.grbDiaHora.Location = new System.Drawing.Point(1587, 34);
+            this.grbDiaHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grbDiaHora.Name = "grbDiaHora";
-            this.grbDiaHora.Size = new System.Drawing.Size(200, 100);
+            this.grbDiaHora.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbDiaHora.Size = new System.Drawing.Size(267, 123);
             this.grbDiaHora.TabIndex = 8;
             this.grbDiaHora.TabStop = false;
             // 
             // txtMessage
             // 
             this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.txtMessage.Location = new System.Drawing.Point(172, 165);
+            this.txtMessage.Location = new System.Drawing.Point(229, 203);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ReadOnly = true;
-            this.txtMessage.Size = new System.Drawing.Size(644, 290);
+            this.txtMessage.Size = new System.Drawing.Size(857, 356);
             this.txtMessage.TabIndex = 9;
             this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -178,9 +190,10 @@
             this.btnVolver.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVolver.Location = new System.Drawing.Point(172, 484);
+            this.btnVolver.Location = new System.Drawing.Point(229, 596);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(644, 53);
+            this.btnVolver.Size = new System.Drawing.Size(859, 65);
             this.btnVolver.TabIndex = 10;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -196,9 +209,9 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1483, 607);
+            this.ClientSize = new System.Drawing.Size(1924, 747);
             this.Controls.Add(this.ptbFoto);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtMessage);
@@ -209,6 +222,7 @@
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnEntrada);
             this.Controls.Add(this.txtNif);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPrincipal";
             this.Text = "Aev7";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);

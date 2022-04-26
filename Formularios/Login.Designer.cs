@@ -40,9 +40,10 @@
             // 
             this.lblInicioS.AutoSize = true;
             this.lblInicioS.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblInicioS.Location = new System.Drawing.Point(88, 30);
+            this.lblInicioS.Location = new System.Drawing.Point(117, 37);
+            this.lblInicioS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInicioS.Name = "lblInicioS";
-            this.lblInicioS.Size = new System.Drawing.Size(259, 39);
+            this.lblInicioS.Size = new System.Drawing.Size(315, 48);
             this.lblInicioS.TabIndex = 0;
             this.lblInicioS.Text = "Inicio de Sesión";
             // 
@@ -50,27 +51,31 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblNombre.Location = new System.Drawing.Point(119, 95);
+            this.lblNombre.Location = new System.Drawing.Point(159, 117);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(195, 25);
+            this.lblNombre.Size = new System.Drawing.Size(251, 29);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "NIF de Administrador";
             // 
             // txtNif
             // 
             this.txtNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtNif.Location = new System.Drawing.Point(124, 134);
+            this.txtNif.Location = new System.Drawing.Point(165, 165);
+            this.txtNif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNif.MaxLength = 9;
             this.txtNif.Name = "txtNif";
-            this.txtNif.Size = new System.Drawing.Size(190, 23);
+            this.txtNif.Size = new System.Drawing.Size(252, 26);
             this.txtNif.TabIndex = 2;
+            this.txtNif.TextChanged += new System.EventHandler(this.txtNif_TextChanged);
             // 
             // txtCont
             // 
             this.txtCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtCont.Location = new System.Drawing.Point(124, 232);
+            this.txtCont.Location = new System.Drawing.Point(165, 286);
+            this.txtCont.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCont.Name = "txtCont";
-            this.txtCont.Size = new System.Drawing.Size(190, 23);
+            this.txtCont.Size = new System.Drawing.Size(252, 26);
             this.txtCont.TabIndex = 3;
             this.txtCont.UseSystemPasswordChar = true;
             // 
@@ -78,18 +83,20 @@
             // 
             this.lblCont.AutoSize = true;
             this.lblCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblCont.Location = new System.Drawing.Point(119, 183);
+            this.lblCont.Location = new System.Drawing.Point(159, 225);
+            this.lblCont.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCont.Name = "lblCont";
-            this.lblCont.Size = new System.Drawing.Size(114, 25);
+            this.lblCont.Size = new System.Drawing.Size(143, 29);
             this.lblCont.TabIndex = 4;
             this.lblCont.Text = "Contraseña";
             // 
             // btnEntrar
             // 
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnEntrar.Location = new System.Drawing.Point(211, 285);
+            this.btnEntrar.Location = new System.Drawing.Point(281, 351);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(103, 34);
+            this.btnEntrar.Size = new System.Drawing.Size(137, 42);
             this.btnEntrar.TabIndex = 5;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -97,15 +104,16 @@
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 356);
+            this.ClientSize = new System.Drawing.Size(577, 438);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblCont);
             this.Controls.Add(this.txtCont);
             this.Controls.Add(this.txtNif);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblInicioS);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmLogin";
             this.Text = "Inicio de Sesión";
             this.Load += new System.EventHandler(this.FrmLogin_Load);

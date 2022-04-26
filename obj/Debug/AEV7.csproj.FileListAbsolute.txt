@@ -75,3 +75,40 @@ C:\Users\RxRos\Desktop\evaluable de seguridad 2.0\obj\Debug\AEV7.csproj.CopyComp
 C:\Users\RxRos\Desktop\evaluable de seguridad 2.0\obj\Debug\AEV7.exe
 C:\Users\RxRos\Desktop\evaluable de seguridad 2.0\obj\Debug\AEV7.pdb
 >>>>>>> e50592e4ee8739b96b8f1ba37ea45a86525becea
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\AEV7.exe.config
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\AEV7.exe
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\AEV7.pdb
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\Google.Protobuf.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\MySql.Data.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Buffers.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Memory.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\ZstdNet.dll
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\Google.Protobuf.pdb
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\Google.Protobuf.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\MySql.Data.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Buffers.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Memory.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\alvar\Desktop\aev7\aev7\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.csproj.AssemblyReference.cache
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.csproj.SuggestedBindingRedirects.cache
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.Formularios.FrmPermanencia.resources
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.FrmMantenimiento.resources
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.FrmPrincipal.resources
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.FrmLogin.resources
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.Properties.Resources.resources
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.csproj.GenerateResource.cache
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.csproj.CoreCompileInputs.cache
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.csproj.CopyComplete
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.exe
+C:\Users\alvar\Desktop\aev7\aev7\obj\Debug\AEV7.pdb

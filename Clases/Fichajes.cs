@@ -106,7 +106,7 @@ namespace AEV7.Clases
                 {
                     
                         double tiempo = TimeSpan.Parse(reader.GetString(2)).TotalMinutes - TimeSpan.Parse(reader.GetString(1)).TotalMinutes;
-                        Fichajes fichaje = new Fichajes(reader.GetString(0), reader.GetString(1), reader.GetString(2), tiempo);
+                        Fichajes fichaje = new Fichajes(reader.GetDateTime(0).Date.ToString(), reader.GetString(1), reader.GetString(2), tiempo);
                         lista.Add(fichaje);
                     
  
@@ -126,12 +126,6 @@ namespace AEV7.Clases
 
             if (reader.HasRows)   // En caso que se hallen registros en el objeto reader
             {
-
-
-                // Recorremos el reader y cargamos la lista de empleados.
-                while (reader.Read())
-                {
-
 
                     // Recorremos el reader y cargamos la lista de fichajes.
                     while (reader.Read())
@@ -153,9 +147,9 @@ namespace AEV7.Clases
                         lista.Add(user);
                     }
                     reader.Close();
-                }
-                
             }
+                
+            
             return lista;
         }
     }
