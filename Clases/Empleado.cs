@@ -225,6 +225,18 @@ namespace AEV7.Clases
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
 
             retorno = comando.ExecuteNonQuery();
+            
+            return retorno;
+        }
+        
+        public static int RestaurarEmpleado(Empleado emp)
+        {
+            int retorno;
+            string consulta = String.Format("UPDATE empleado SET borrado = ({0}) WHERE nif = ('{1}')",false, emp.nif);
+
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+
+            retorno = comando.ExecuteNonQuery();
 
             return retorno;
         }

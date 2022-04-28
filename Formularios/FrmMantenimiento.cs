@@ -91,11 +91,25 @@ namespace AEV7
                             Empleado emp = new Empleado(txtNif.Text, txtNombre.Text, txtApellidos.Text, txtDir.Text, chbAdmin.Checked, txtCont.Text);
 
                             Empleado.AgregarEmpleado(emp);
-
+                            
                             MessageBox.Show("Empleado agregado correctamente");
                         }
                         else
                         {
+                            if (!lista[0].Borrado)
+                            {
+                                DialogResult dialogResult = MessageBox.Show("Empleado ya registrado pero borrado\n ¿Desea dar de alta?", 
+                                    "Empleado ya registrado", MessageBoxButtons.YesNo);
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    Empleado.RestaurarEmpleado(lista[0]);
+                                    MessageBox.Show("Empleado restaurado correctamente");
+                                    RellenarDataGridEmp();
+
+
+                                }
+                            }
+
                             MessageBox.Show("El empleado ya existe");
                         }
 
