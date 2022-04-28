@@ -28,12 +28,25 @@ namespace AEV7
 
         public void RellenarDataGridFich(bool comprobar)
         {
+            string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            
             dtgFichajes.Rows.Clear();
+            
             List<Fichajes> listado = new List<Fichajes>();
+            
             listado = Fichajes.ListadoFichajes(comprobar);
+            
             for (int j = 0; j < listado.Count; j++)
             {
-                dtgFichajes.Rows.Add(listado[j].Nif, listado[j].Dia, listado[j].Hora, listado[j].Salida);
+                if (listado[j].Dia == fecha && comprobar == false)
+                {
+                    dtgFichajes.Rows.Add(listado[j].Nif, listado[j].Dia, listado[j].Hora, listado[j].Salida);
+                }
+                else if (comprobar == true)
+                {
+                    dtgFichajes.Rows.Add(listado[j].Nif, listado[j].Dia, listado[j].Hora, listado[j].Salida);
+                }
+
             }
 
 
@@ -245,6 +258,11 @@ namespace AEV7
             {
                 ConBD.CerrarConexion();
             }
+
+        }
+
+        private void dtgFichajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

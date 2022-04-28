@@ -45,7 +45,7 @@ namespace AEV7.Formularios
                             {
                                 string duracion = (Math.Truncate(f.Tiempo / 60) + "h " + Math.Truncate(f.Tiempo % 60) + "min").ToString();
                                 
-                                dgvPerm.Rows.Add(f.Dia, f.Hora, f.Salida, duracion);
+                                dgvPerm.Rows.Add(DateTime.Parse(f.Dia).ToString("dddd, dd MMM yyy"), f.Hora, f.Salida, duracion);
                             }
 
                         }
