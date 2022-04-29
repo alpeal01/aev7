@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvPerm = new System.Windows.Forms.DataGridView();
-            this.fecha_dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.h_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.h_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.mySqlDataAdapter2 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.txtNif = new System.Windows.Forms.TextBox();
@@ -41,6 +37,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dtpPerm1 = new System.Windows.Forms.DateTimePicker();
             this.dtpPerm2 = new System.Windows.Forms.DateTimePicker();
+            this.fecha_dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.h_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.h_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,34 +52,12 @@
             this.h_entrada,
             this.h_salida,
             this.duracion});
-            this.dgvPerm.Location = new System.Drawing.Point(64, 95);
+            this.dgvPerm.Location = new System.Drawing.Point(85, 117);
+            this.dgvPerm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPerm.Name = "dgvPerm";
-            this.dgvPerm.Size = new System.Drawing.Size(570, 244);
+            this.dgvPerm.RowHeadersWidth = 51;
+            this.dgvPerm.Size = new System.Drawing.Size(760, 300);
             this.dgvPerm.TabIndex = 0;
-            // 
-            // fecha_dia
-            // 
-            this.fecha_dia.HeaderText = "Fecha";
-            this.fecha_dia.Name = "fecha_dia";
-            this.fecha_dia.ReadOnly = true;
-            // 
-            // h_entrada
-            // 
-            this.h_entrada.HeaderText = "Entrada";
-            this.h_entrada.Name = "h_entrada";
-            this.h_entrada.ReadOnly = true;
-            // 
-            // h_salida
-            // 
-            this.h_salida.HeaderText = "Salida";
-            this.h_salida.Name = "h_salida";
-            this.h_salida.ReadOnly = true;
-            // 
-            // duracion
-            // 
-            this.duracion.HeaderText = "Duración";
-            this.duracion.Name = "duracion";
-            this.duracion.ReadOnly = true;
             // 
             // mySqlDataAdapter1
             // 
@@ -97,27 +75,30 @@
             // 
             // txtNif
             // 
-            this.txtNif.Location = new System.Drawing.Point(94, 46);
+            this.txtNif.Location = new System.Drawing.Point(125, 57);
+            this.txtNif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNif.MaxLength = 9;
             this.txtNif.Name = "txtNif";
-            this.txtNif.Size = new System.Drawing.Size(163, 20);
+            this.txtNif.Size = new System.Drawing.Size(216, 22);
             this.txtNif.TabIndex = 1;
             this.txtNif.TextChanged += new System.EventHandler(this.txtNif_TextChanged);
             // 
             // lblNIF
             // 
             this.lblNIF.AutoSize = true;
-            this.lblNIF.Location = new System.Drawing.Point(61, 49);
+            this.lblNIF.Location = new System.Drawing.Point(81, 60);
+            this.lblNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNIF.Name = "lblNIF";
-            this.lblNIF.Size = new System.Drawing.Size(27, 13);
+            this.lblNIF.Size = new System.Drawing.Size(31, 16);
             this.lblNIF.TabIndex = 2;
             this.lblNIF.Text = "NIF:";
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(589, 380);
+            this.btnCerrar.Location = new System.Drawing.Point(785, 468);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -125,9 +106,10 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(508, 380);
+            this.btnBuscar.Location = new System.Drawing.Point(677, 468);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -135,23 +117,59 @@
             // 
             // dtpPerm1
             // 
-            this.dtpPerm1.Location = new System.Drawing.Point(64, 379);
+            this.dtpPerm1.Location = new System.Drawing.Point(76, 469);
+            this.dtpPerm1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpPerm1.Name = "dtpPerm1";
-            this.dtpPerm1.Size = new System.Drawing.Size(200, 20);
+            this.dtpPerm1.Size = new System.Drawing.Size(265, 22);
             this.dtpPerm1.TabIndex = 5;
+            this.dtpPerm1.ValueChanged += new System.EventHandler(this.dtpPerm1_ValueChanged);
             // 
             // dtpPerm2
             // 
-            this.dtpPerm2.Location = new System.Drawing.Point(283, 380);
+            this.dtpPerm2.Location = new System.Drawing.Point(377, 468);
+            this.dtpPerm2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpPerm2.Name = "dtpPerm2";
-            this.dtpPerm2.Size = new System.Drawing.Size(192, 20);
+            this.dtpPerm2.Size = new System.Drawing.Size(255, 22);
             this.dtpPerm2.TabIndex = 6;
+            this.dtpPerm2.ValueChanged += new System.EventHandler(this.dtpPerm2_ValueChanged);
+            // 
+            // fecha_dia
+            // 
+            this.fecha_dia.HeaderText = "Fecha";
+            this.fecha_dia.MinimumWidth = 6;
+            this.fecha_dia.Name = "fecha_dia";
+            this.fecha_dia.ReadOnly = true;
+            this.fecha_dia.Width = 125;
+            // 
+            // h_entrada
+            // 
+            this.h_entrada.HeaderText = "Entrada";
+            this.h_entrada.MinimumWidth = 6;
+            this.h_entrada.Name = "h_entrada";
+            this.h_entrada.ReadOnly = true;
+            this.h_entrada.Width = 125;
+            // 
+            // h_salida
+            // 
+            this.h_salida.HeaderText = "Salida";
+            this.h_salida.MinimumWidth = 6;
+            this.h_salida.Name = "h_salida";
+            this.h_salida.ReadOnly = true;
+            this.h_salida.Width = 125;
+            // 
+            // duracion
+            // 
+            this.duracion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.duracion.HeaderText = "Duración";
+            this.duracion.MinimumWidth = 6;
+            this.duracion.Name = "duracion";
+            this.duracion.ReadOnly = true;
             // 
             // FrmPermanencia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dtpPerm2);
             this.Controls.Add(this.dtpPerm1);
             this.Controls.Add(this.btnBuscar);
@@ -159,6 +177,7 @@
             this.Controls.Add(this.lblNIF);
             this.Controls.Add(this.txtNif);
             this.Controls.Add(this.dgvPerm);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPermanencia";
             this.Text = "Permanencia";
             this.Load += new System.EventHandler(this.FrmPermanencia_Load);

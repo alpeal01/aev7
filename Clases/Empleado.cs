@@ -29,14 +29,14 @@ namespace AEV7.Clases
         public string Clave { get { return clave; } }
 
 
-        public Empleado(string nif, string nom, string ape, string dir, bool adm, string clave)
+        public Empleado(string nif, string nom, string ape, string dir, bool adm, string clave, bool borr)
         {
             this.nif = nif;
             this.nombre = nom;
             this.apellido = ape;
             this.direccion = dir;
             this.admin = adm;
-            this.borrado = false;
+            this.borrado = borr;
             this.clave = clave;
 
         }
@@ -117,7 +117,7 @@ namespace AEV7.Clases
                 while (reader.Read())
                 {
                     Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetString(3), reader.GetBoolean(4), reader.GetString(6));
+                        reader.GetString(3), reader.GetBoolean(4), reader.GetString(6), reader.GetBoolean(5));
                     lista.Add(user);
                 }
                 reader.Close();
@@ -204,7 +204,7 @@ namespace AEV7.Clases
                 while (reader.Read())
                 {
                     Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetString(3), reader.GetBoolean(4), reader.GetString(6));
+                        reader.GetString(3), reader.GetBoolean(4), reader.GetString(6),reader.GetBoolean(5));
                     lista.Add(user);
                 }
                 reader.Close();

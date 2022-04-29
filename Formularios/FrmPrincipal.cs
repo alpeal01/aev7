@@ -37,7 +37,7 @@ namespace AEV7
                         ConBD.AbrirConexion();
                         List<Empleado> lista = new List<Empleado>();
                         lista = Empleado.BuscarEmpleado(txtNif.Text);
-                        if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
+                        if (lista.Count > 0 && lista[0].Nif == txtNif.Text && lista[0].Borrado == false)
                         {
                             if (Empleado.compFicharEntrada(txtNif.Text))
                             {
@@ -89,7 +89,7 @@ namespace AEV7
                         ConBD.AbrirConexion();
                         List<Empleado> lista = new List<Empleado>();
                         lista = Empleado.BuscarEmpleado(txtNif.Text);
-                        if (lista.Count > 0 && lista[0].Nif == txtNif.Text)
+                        if (lista.Count > 0 && lista[0].Nif == txtNif.Text && lista[0].Borrado == false)
                         {
                             if (!Empleado.compFicharEntrada(txtNif.Text))
                             {

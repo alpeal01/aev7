@@ -80,6 +80,22 @@ namespace AEV7.Formularios
         {
             txtNif.Text = txtNif.Text.ToUpper();
         }
+
+        private void dtpPerm1_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpPerm1.Value > dtpPerm2.Value)
+            {
+                dtpPerm1.Value = dtpPerm2.Value;
+            }
+        }
+
+        private void dtpPerm2_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpPerm1.Value > dtpPerm2.Value)
+            {
+                dtpPerm2.Value = dtpPerm1.Value;
+            }
+        }
     }
 }
 

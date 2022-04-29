@@ -83,12 +83,12 @@ namespace AEV7
                 try { 
                     if (ConBD.Conexion != null)
                     {
-
+                        
                         ConBD.AbrirConexion();
                         List <Empleado> lista = Empleado.BuscarEmpleado(txtNif.Text);
                         if (lista.Count == 0)
                         {
-                            Empleado emp = new Empleado(txtNif.Text, txtNombre.Text, txtApellidos.Text, txtDir.Text, chbAdmin.Checked, txtCont.Text);
+                            Empleado emp = new Empleado(txtNif.Text, txtNombre.Text, txtApellidos.Text, txtDir.Text, chbAdmin.Checked, txtCont.Text,false);
 
                             Empleado.AgregarEmpleado(emp);
                             
@@ -147,8 +147,16 @@ namespace AEV7
                 if (ConBD.Conexion != null)
                 {
                     ConBD.AbrirConexion();
-                    Empleado.BorrarEmpleado(txtNif.Text);
-                    RellenarDataGridEmp();
+                    if (Empleado.CalcLetra(txtNif.Text)) {
+                        Empleado.BorrarEmpleado(txtNif.Text);
+                        RellenarDataGridEmp();
+                    MessageBox.Show("Empleado eliminado correctamente"); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nif incorrecto");
+                    }
+                    
 
                 }
                 else
