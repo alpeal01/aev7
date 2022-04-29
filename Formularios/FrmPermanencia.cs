@@ -39,7 +39,7 @@ namespace AEV7.Formularios
                         {
                             //codigo
                             dgvPerm.Rows.Clear();
-                            List<Fichajes> list = Fichajes.permanencia(txtNif.Text,dtpPerm1.Value, dtpPerm2.Value);
+                            List<Fichajes> list = Fichajes.Permanencia(txtNif.Text,dtpPerm1.Value, dtpPerm2.Value);
 
                             foreach (Fichajes f in list)
                             {

@@ -91,7 +91,7 @@ namespace AEV7.Clases
         /// <param name="d1"></param>
         /// <param name="d2"></param>
         /// <returns>Lista de los fichajes de su permanencia</returns>
-        public static List<Fichajes> permanencia(string nif, DateTime d1, DateTime d2)
+        public static List<Fichajes> Permanencia(string nif, DateTime d1, DateTime d2)
         {
             List<Fichajes> lista = new List<Fichajes>();
             string consulta = String.Format("SELECT dia, h_entrada, h_salida FROM empleado INNER JOIN fichaje ON nif = nif_empleado " +
