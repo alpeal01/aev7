@@ -42,10 +42,10 @@ namespace AEV7.Clases
         }
 
         /// <summary>
-        /// Calcular la letra del nif y devulve si es cierta o no
+        /// Calcular la letra del nif y devuelve si es cierta o no
         /// </summary>
         /// <param name="nif">nif del usuario</param>
-        /// <returns>True or False</returns>
+        /// <returns>True o False</returns>
         public static bool CalcLetra(string nif)
         {
             if(nif.Length != 9)
@@ -103,7 +103,7 @@ namespace AEV7.Clases
         /// Función que busca un empleado en la base de datos
         /// </summary>
         /// <param name="nif"></param>
-        /// <returns> lista de empelados</returns>
+        /// <returns>Lista de empleados</returns>
         public static List<Empleado> BuscarEmpleado(string nif)
         {
             List<Empleado> lista = new List<Empleado>();
@@ -126,11 +126,11 @@ namespace AEV7.Clases
 
         }
         /// <summary>
-        /// Funcion que busca
+        /// Funcion que crea un registro de entrada en la base de datos
         /// </summary>
         /// <param name="nif"></param>
         /// <param name="hora"></param>
-        /// <returns></returns>
+        /// <returns>Número de registros afectados</returns>
         public static int FicharEntrada(string nif, string hora)
         {
             int retorno;
@@ -145,11 +145,11 @@ namespace AEV7.Clases
             return retorno;
         }
         /// <summary>
-        /// Funcio que fiha un empleado a la salida de la empresa en la base de datos
+        /// Función que actualiza un registro de entrada en la base de datos y asigna una hora de salida
         /// </summary>
         /// <param name="nif"></param>
         /// <param name="hora"></param>
-        /// <returns></returns>
+        /// <returns>Número de registros afectados</returns>
         public static int FicharSalida(string nif, string hora)
         {
             int retorno;
@@ -163,10 +163,10 @@ namespace AEV7.Clases
         }
         
         /// <summary>
-        /// Comprueba si el empelado a fichado de entrada
+        /// Función que comprueba si el empleado ha fichado de entrada
         /// </summary>
         /// <param name="nif"></param>
-        /// <returns>True si a fichado o false si no</returns>
+        /// <returns>True si ha fichado o false si no ha fichado</returns>
         public static bool compFicharEntrada(string nif)
         {
             int retorno;
@@ -188,9 +188,9 @@ namespace AEV7.Clases
 
         }
         /// <summary>
-        /// Lista a todo los empleado que no esten de baja;
+        /// Lista a todos los empleados que no han sido borrados
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una lista de empleados</returns>
         public static List<Empleado> ListadoEmpleados()
         {
             List<Empleado> lista = new List<Empleado>();
@@ -212,10 +212,10 @@ namespace AEV7.Clases
             return lista;
         }
         /// <summary>
-        /// Cambia el estado de borrado a true en un empelado
+        /// Función que cambia el estado de borrado a true en un empleado
         /// </summary>
         /// <param name="nif"></param>
-        /// <returns></returns>
+        /// <returns>Número de registros afectados</returns>
         public static int BorrarEmpleado(string nif)
         {
             int retorno;
@@ -228,7 +228,12 @@ namespace AEV7.Clases
             
             return retorno;
         }
-        
+
+        /// <summary>
+        /// Función que actualiza el estado de borrado de un empleado y se lo asigna a false
+        /// </summary>
+        /// <param name="emp"></param>
+        /// <returns>Número de registros afectados</returns>
         public static int RestaurarEmpleado(Empleado emp)
         {
             int retorno;

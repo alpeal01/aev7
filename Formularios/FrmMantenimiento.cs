@@ -10,10 +10,8 @@ namespace AEV7
     {
 
         /// <summary>
-        /// Rellena el datagrie con los empleados del sistema
+        /// Rellena del datagrid con los empleados que hay activos
         /// </summary>
-
-
         public void RellenarDataGridEmp()
 
         {
@@ -26,6 +24,10 @@ namespace AEV7
             }
         }
 
+        /// <summary>
+        /// Rellena del datagrid con los fichajes que se especifican
+        /// </summary>
+        /// <param name="comprobar"></param>
         public void RellenarDataGridFich(bool comprobar)
         {
             string fecha = DateTime.Now.ToString("dd-MM-yyyy");
@@ -182,7 +184,7 @@ namespace AEV7
             Environment.Exit(1);
         }
         /// <summary>
-        /// Al pulsar doble clic borra un empleado
+        /// Al pulsar doble click borra un empleado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -220,7 +222,7 @@ namespace AEV7
 
 
         /// <summary>
-        /// Cambia a mayuscula la letra del nif automaticamente
+        /// Cambia a mayúscula la letra del nif automáticamente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
