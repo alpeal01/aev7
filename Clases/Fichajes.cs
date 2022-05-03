@@ -45,18 +45,16 @@ namespace AEV7.Clases
             salida = s;
             tiempo = t;
         }
-
-        /// <summary>
-        /// Lista de fichajes de empleado
-        /// </summary>
-        /// <returns>devuelve un string con los fichajes</returns>
-
-
+        
         public Fichajes()
         {
 
         }
 
+        /// <summary>
+        /// Función dedicada a la presencia que crea una variable con los datos de los empleados que no han fichado de salida
+        /// </summary>
+        /// <returns>Un string con los datos de los empleados</returns>
         public static string LEmpleados()
         {
             string mensaje = "Empleados actualmente activos:";
@@ -116,6 +114,11 @@ namespace AEV7.Clases
             return lista;
         }
 
+        /// <summary>
+        /// Función que lista los fichajes que hayan sido realizados en una fecha determinada dependiendo del booleano que se introduzca por parámetro
+        /// </summary>
+        /// <param name="comprobar"></param>
+        /// <returns>Una lista de empleados</returns>
         public static List<Fichajes> ListadoFichajes(bool comprobar)
         {
             List<Fichajes> lista = new List<Fichajes>();

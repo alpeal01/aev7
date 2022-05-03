@@ -40,12 +40,18 @@ namespace AEV7.Clases
             }
         }
 
+        /// <summary>
+        /// Función que comprueba y abre la conexión con la base de datos
+        /// </summary>
         public static void AbrirConexion()
         {
             if (instancia != null)
                 instancia.Open();
         }
 
+        /// <summary>
+        /// Función que comprueba y cierra la conexión con la base de datos
+        /// </summary>
         public static void CerrarConexion()
         {
             if (instancia != null)
