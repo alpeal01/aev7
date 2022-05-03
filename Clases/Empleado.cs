@@ -120,8 +120,9 @@ namespace AEV7.Clases
                         reader.GetString(3), reader.GetBoolean(4), reader.GetString(6), reader.GetBoolean(5));
                     lista.Add(user);
                 }
-                reader.Close();
+                
             }
+            reader.Close();
             return lista;
 
         }
